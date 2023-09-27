@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/theme/custom_text_theme.dart';
+import 'package:h2o_flutter/src/core/init/theme/custom_text_theme.dart';
 
 final themeProvider =
     StateNotifierProvider.autoDispose<ThemeProvider, ThemeData>((ref) {
