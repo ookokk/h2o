@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/view/get_started/view/get_started_view.dart';
+import 'package:h2o_flutter/src/view/splash/view/splash_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'src/core/init/theme/theme_provider.dart';
@@ -20,7 +22,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // routes: Routes.routes,
-      theme: currentTheme,
+      theme: currentTheme, home: GetStartedView(),
     );
   }
 }

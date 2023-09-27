@@ -1,13 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/view/splash/view/splash_view.dart';
 
-abstract class BaseState<T extends StatefulWidget> extends State<T> {
+mixin SplashViewModel on ConsumerState<SplashView> {
   late ConnectivityResult _connectionStatus;
-// rotalar set edildikten sonra bu sayfada yapılacaklar var
+
   @override
   void initState() {
-    super.initState();
     checkInternetConnectivity();
+    super.initState();
   }
 
   Future<void> checkInternetConnectivity() async {
@@ -43,10 +45,5 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
         );
       },
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 }

@@ -49,7 +49,7 @@ class ThemeProvider extends StateNotifier<ThemeData> {
       headlineMedium:
           CustomTextTheme.instance!.headline9.copyWith(color: Colors.black),
     ),
-    scaffoldBackgroundColor: const Color(0xffdedede),
+    scaffoldBackgroundColor: Colors.white,
     bottomAppBarTheme: const BottomAppBarTheme(color: Color(0xff73a9e6)),
   );
 

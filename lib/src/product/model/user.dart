@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class User {
+  int? id;
   String? gender;
   double? weight;
   TimeOfDay? wakeUpTime;
   TimeOfDay? bedTime;
-  int? id;
   double? dailyWaterNeed;
+  int? daysOfTrainingPerWeek;
 
   User({
     this.gender,
@@ -15,11 +16,13 @@ class User {
     this.bedTime,
     this.id,
     this.dailyWaterNeed,
+    this.daysOfTrainingPerWeek,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       gender: json['gender'],
+      daysOfTrainingPerWeek: json['daysOfTrainingPerWeek'],
       weight: json['weight']?.toDouble(),
       wakeUpTime: _parseTimeOfDay(json['wakeUpTime']),
       bedTime: _parseTimeOfDay(json['bedTime']),
@@ -31,6 +34,7 @@ class User {
   Map<String, dynamic> toJson() {
     return {
       'gender': gender,
+      'daysOfTrainingPerWeek': daysOfTrainingPerWeek,
       'weight': weight,
       'wakeUpTime': _timeOfDayToJson(wakeUpTime),
       'bedTime': _timeOfDayToJson(bedTime),
