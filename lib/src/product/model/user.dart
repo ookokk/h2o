@@ -8,20 +8,22 @@ class User {
   TimeOfDay? bedTime;
   double? dailyWaterNeed;
   int? daysOfTrainingPerWeek;
+  int? age;
 
-  User({
-    this.gender,
-    this.weight,
-    this.wakeUpTime,
-    this.bedTime,
-    this.id,
-    this.dailyWaterNeed,
-    this.daysOfTrainingPerWeek,
-  });
+  User(
+      {this.gender,
+      this.weight,
+      this.wakeUpTime,
+      this.bedTime,
+      this.id,
+      this.dailyWaterNeed,
+      this.daysOfTrainingPerWeek,
+      this.age});
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       gender: json['gender'],
+      age: json['age'],
       daysOfTrainingPerWeek: json['daysOfTrainingPerWeek'],
       weight: json['weight']?.toDouble(),
       wakeUpTime: _parseTimeOfDay(json['wakeUpTime']),
@@ -34,6 +36,7 @@ class User {
   Map<String, dynamic> toJson() {
     return {
       'gender': gender,
+      'age': age,
       'daysOfTrainingPerWeek': daysOfTrainingPerWeek,
       'weight': weight,
       'wakeUpTime': _timeOfDayToJson(wakeUpTime),

@@ -31,23 +31,23 @@ class ThemeProvider extends StateNotifier<ThemeData> {
     primaryColor: const Color(0xff73a9e6),
     textTheme: TextTheme(
       bodyLarge:
-          CustomTextTheme.instance!.headline1.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline38.copyWith(color: Colors.black),
       bodyMedium:
-          CustomTextTheme.instance!.headline2.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline34.copyWith(color: Colors.black),
       bodySmall:
-          CustomTextTheme.instance!.headline3.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline28.copyWith(color: Colors.black),
       displayLarge:
-          CustomTextTheme.instance!.headline4.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline26.copyWith(color: Colors.black),
       labelLarge:
-          CustomTextTheme.instance!.headline5.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline24.copyWith(color: Colors.black),
       displayMedium:
-          CustomTextTheme.instance!.headline6.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline20.copyWith(color: Colors.black),
       displaySmall:
-          CustomTextTheme.instance!.headline7.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline18.copyWith(color: Colors.black),
       headlineLarge:
-          CustomTextTheme.instance!.headline8.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline16.copyWith(color: Colors.black),
       headlineMedium:
-          CustomTextTheme.instance!.headline9.copyWith(color: Colors.black),
+          CustomTextTheme.instance!.headline14.copyWith(color: Colors.black),
     ),
     scaffoldBackgroundColor: Colors.white,
     bottomAppBarTheme: const BottomAppBarTheme(color: Color(0xff73a9e6)),
@@ -63,23 +63,23 @@ class ThemeProvider extends StateNotifier<ThemeData> {
     brightness: Brightness.dark,
     textTheme: TextTheme(
       bodyLarge:
-          CustomTextTheme.instance!.headline1.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline38.copyWith(color: Colors.white),
       bodyMedium:
-          CustomTextTheme.instance!.headline2.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline34.copyWith(color: Colors.white),
       bodySmall:
-          CustomTextTheme.instance!.headline3.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline28.copyWith(color: Colors.white),
       displayLarge:
-          CustomTextTheme.instance!.headline4.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline26.copyWith(color: Colors.white),
       labelLarge:
-          CustomTextTheme.instance!.headline5.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline24.copyWith(color: Colors.white),
       displayMedium:
-          CustomTextTheme.instance!.headline6.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline20.copyWith(color: Colors.white),
       displaySmall:
-          CustomTextTheme.instance!.headline7.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline18.copyWith(color: Colors.white),
       headlineLarge:
-          CustomTextTheme.instance!.headline8.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline16.copyWith(color: Colors.white),
       headlineMedium:
-          CustomTextTheme.instance!.headline9.copyWith(color: Colors.white),
+          CustomTextTheme.instance!.headline14.copyWith(color: Colors.white),
     ),
     scaffoldBackgroundColor: const Color(0xff27323a),
     bottomAppBarTheme: const BottomAppBarTheme(color: Color(0xff5d5d5d)),

@@ -18,29 +18,32 @@ class GetStartedView extends ConsumerWidget {
       backgroundColor: currentTheme.scaffoldBackgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Center(
-          child: Column(
-            children: [
-              Image.asset(
-                'assets/images/get_started.png',
-                width: DeviceSize.kHeight(context) * 0.6,
-              ),
-              Text(Strings.kGetSAppName,
-                  style: currentTheme.textTheme.bodyLarge
-                      ?.copyWith(fontWeight: FontWeight.bold)),
-              Text(Strings.kGetSNeverFor,
-                  style: currentTheme.textTheme.displaySmall),
-              const SizedBox(
-                height: 155,
-              ),
-              GetStartedButton(
-                onTap: () {},
-                text: Strings.kGetSBtn,
-              ),
-              const SizedBox(
-                height: 35,
-              )
-            ],
+        child: SizedBox(
+          height: DeviceSize.kHeight(context),
+          child: Center(
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/images/get_started.png',
+                  height: DeviceSize.kHeight(context) * 0.5,
+                ),
+                Text(Strings.kGetSAppName,
+                    style: currentTheme.textTheme.bodyLarge
+                        ?.copyWith(fontWeight: FontWeight.bold)),
+                Text(Strings.kGetSNeverFor,
+                    style: currentTheme.textTheme.displaySmall),
+                const SizedBox(
+                  height: 155,
+                ),
+                GetStartedButton(
+                  onTap: () {},
+                  text: Strings.kGetSBtn,
+                ),
+                const SizedBox(
+                  height: 35,
+                )
+              ],
+            ),
           ),
         ),
       ),

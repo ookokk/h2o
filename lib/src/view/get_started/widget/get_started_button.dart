@@ -37,7 +37,7 @@ class GetStartedButton extends ConsumerWidget {
             DeviceSize.kHeight(context) * 0.11,
           ),
         ),
-        elevation: MaterialStateProperty.all<double>(5),
+        elevation: MaterialStateProperty.all<double>(3),
         shape: MaterialStateProperty.all<OutlinedBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),

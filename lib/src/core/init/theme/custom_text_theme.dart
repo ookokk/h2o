@@ -8,53 +8,53 @@ class CustomTextTheme {
     return _instance;
   }
 
-  final TextStyle headline1 = const TextStyle(
+  final TextStyle headline38 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 38,
     fontWeight: FontWeight.w300,
     letterSpacing: -1.5,
   );
-  final TextStyle headline2 = const TextStyle(
+  final TextStyle headline34 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 34,
     fontWeight: FontWeight.w300,
     letterSpacing: -0.5,
   );
-  final TextStyle headline3 = const TextStyle(
+  final TextStyle headline28 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 28,
     fontWeight: FontWeight.w400,
   );
-  final TextStyle headline4 = const TextStyle(
+  final TextStyle headline26 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 26,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.25,
   );
-  final TextStyle headline5 = const TextStyle(
+  final TextStyle headline24 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 24,
     fontWeight: FontWeight.w400,
   );
-  final TextStyle headline6 = const TextStyle(
+  final TextStyle headline20 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 20,
     fontWeight: FontWeight.w400,
     letterSpacing: 1.5,
   );
-  final TextStyle headline7 = const TextStyle(
+  final TextStyle headline18 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 18,
     fontWeight: FontWeight.w400,
     letterSpacing: 1.5,
   );
-  final TextStyle headline8 = const TextStyle(
+  final TextStyle headline16 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 16,
     fontWeight: FontWeight.w400,
     letterSpacing: 1.5,
   );
-  final TextStyle headline9 = const TextStyle(
+  final TextStyle headline14 = const TextStyle(
     fontFamily: "Poppins",
     fontSize: 14,
     fontWeight: FontWeight.w400,
