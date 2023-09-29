@@ -2,16 +2,25 @@
 class Assets {
   Assets._();
 
-  static const String assetsImagesCircleWater =
-      'assets/images/circle_water.json';
+  static const String animationsCircleWater =
+      'assets/animations/circle_water.json';
+  static const String animationsHydraBottle =
+      'assets/animations/hydra_bottle.json';
   static const String fontsPoppinsBold = 'assets/fonts/Poppins-Bold.ttf';
   static const String fontsPoppinsMedium = 'assets/fonts/Poppins-Medium.ttf';
   static const String fontsPoppinsRegular = 'assets/fonts/Poppins-Regular.ttf';
-  static const String imagesBottleWater = 'assets/images/bottle_water.zip';
-  static const String imagesCircleWater = 'assets/images/circle_water.zip';
+  static const String imagesDumbell = 'assets/images/dumbell.svg';
+  static const String imagesFemale = 'assets/images/female.svg';
   static const String imagesGetGreen = 'assets/images/get_green.png';
   static const String imagesGetStarted = 'assets/images/get_started.png';
-  static const String imagesHydraBottle = 'assets/images/hydra_bottle.json';
+  static const String imagesGlassWater = 'assets/images/glass_water.svg';
+  static const String imagesHard = 'assets/images/hard.svg';
+  static const String imagesIcDrinkWaterBlack =
+      'assets/images/ic_drink_water_black.svg';
   static const String imagesIcHydration = 'assets/images/ic_hydration.svg';
   static const String imagesIcUsers = 'assets/images/ic_users.svg';
+  static const String imagesMale = 'assets/images/male.svg';
+  static const String imagesOften = 'assets/images/often.svg';
+  static const String imagesRare = 'assets/images/rare.svg';
+  static const String imagesWeightTarti = 'assets/images/weight_tarti.svg';
 }

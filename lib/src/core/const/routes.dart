@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:h2o_flutter/src/core/view/first_tab_view.dart';
-import 'package:h2o_flutter/src/core/view/second_tab_view.dart';
+import 'package:h2o_flutter/src/view/register/view/first_tab_view.dart';
+import 'package:h2o_flutter/src/view/register/view/fourth_tab_view.dart';
+import 'package:h2o_flutter/src/view/register/view/second_tab_view.dart';
+import 'package:h2o_flutter/src/view/register/view/third_tab_view.dart';
 import 'package:h2o_flutter/src/view/get_started/view/get_started_view.dart';
 import 'package:h2o_flutter/src/view/splash/view/splash_view.dart';
 
@@ -24,6 +26,8 @@ class Routes {
     getStarted: (context) => const GetStartedView(),
     firstTab: (context) => const FirstTabView(),
     secondTab: (context) => const SecondTabView(),
+    thirdTab: (context) => const ThirdTabView(),
+    fourthTab: (context) => const FourthTabView(),
     //   home: (context) => const HomeView(),
   };
 }
