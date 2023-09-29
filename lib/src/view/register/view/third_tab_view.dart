@@ -120,7 +120,7 @@ class ThirdTabView extends ConsumerWidget {
             ),
             const Expanded(
               child: SizedBox(
-                height: 50,
+                height: 80,
               ),
             ),
           ],

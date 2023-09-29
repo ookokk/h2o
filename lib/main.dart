@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/view/register/view/fifth_tab_view.dart';
+import 'package:h2o_flutter/src/view/home/view/home_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'src/core/const/routes.dart';
@@ -23,7 +23,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routes: Routes.routes,
       theme: currentTheme,
-      home: const FifthTabView(),
+      home: HomeView(),
     );
   }
 }

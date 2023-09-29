@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:h2o_flutter/src/view/home/view/home_view.dart';
 import 'package:h2o_flutter/src/view/register/view/fifth_tab_view.dart';
 import 'package:h2o_flutter/src/view/register/view/first_tab_view.dart';
 import 'package:h2o_flutter/src/view/register/view/fourth_tab_view.dart';
@@ -30,6 +31,6 @@ class Routes {
     thirdTab: (context) => const ThirdTabView(),
     fourthTab: (context) => const FourthTabView(),
     fifthTab: (context) => const FifthTabView(),
-    //   home: (context) => const HomeView(),
+    home: (context) => const HomeView(),
   };
 }

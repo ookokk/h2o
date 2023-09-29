@@ -37,19 +37,17 @@ class CustomTimePickerState extends ConsumerState<CustomTimePicker> {
     final currentTheme = ref.watch(themeProvider);
     return SizedBox(
       height: DeviceSize.kHeight(context) * 0.4,
-      child: Expanded(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            GestureDetector(
-              onTap: () => _selectTime(context),
-              child: Text(
-                "${_selectedTime.hour.toString().padLeft(2, '0')}:${_selectedTime.minute.toString().padLeft(2, '0')}",
-                style: currentTheme.textTheme.bodyLarge?.copyWith(fontSize: 65),
-              ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () => _selectTime(context),
+            child: Text(
+              "${_selectedTime.hour.toString().padLeft(2, '0')}:${_selectedTime.minute.toString().padLeft(2, '0')}",
+              style: currentTheme.textTheme.bodyLarge?.copyWith(fontSize: 65),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
