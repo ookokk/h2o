@@ -29,6 +29,8 @@ class Strings {
   static const String kFourthWhenWakeUp = "When do you usually wake up?";
   static const String kFourthGettingHydrated =
       "Getting hydrated right after waking up will give you energy in the morning!";
+  static const String kFourthSelectTime = "Select Time";
+
 //fifth
   static const String kFifthWhenEndDay = "When do you usually end a day?";
   static const String kFifthDrinkingWater =

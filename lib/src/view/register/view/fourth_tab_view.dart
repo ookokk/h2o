@@ -7,6 +7,7 @@ import 'package:h2o_flutter/src/product/widget/custom_app_bar.dart';
 import 'package:h2o_flutter/src/view/get_started/widget/get_started_button.dart';
 import 'package:h2o_flutter/src/view/register/widget/basic_note_container.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_percent_indicator.dart';
+import 'package:h2o_flutter/src/view/register/widget/custom_time_picker.dart';
 
 class FourthTabView extends ConsumerWidget {
   const FourthTabView({
@@ -55,7 +56,9 @@ class FourthTabView extends ConsumerWidget {
                   child: SizedBox(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [],
+                      children: [
+                        CustomTimePicker(onTimeSelected: (selectedTime) {})
+                      ],
                     ),
                   )),
               Expanded(
