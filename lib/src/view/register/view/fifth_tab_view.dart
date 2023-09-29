@@ -9,8 +9,8 @@ import 'package:h2o_flutter/src/view/register/widget/basic_note_container.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_percent_indicator.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_time_picker.dart';
 
-class FourthTabView extends ConsumerWidget {
-  const FourthTabView({
+class FifthTabView extends ConsumerWidget {
+  const FifthTabView({
     Key? key,
   }) : super(key: key);
 
@@ -32,7 +32,7 @@ class FourthTabView extends ConsumerWidget {
               const SizedBox(
                 height: 8,
               ),
-              const CustomPercentIndicator(percent: 0.8),
+              const CustomPercentIndicator(percent: 1),
               const SizedBox(
                 height: 24,
               ),
@@ -40,7 +40,7 @@ class FourthTabView extends ConsumerWidget {
                 flex: 2,
                 child: Text(
                   textAlign: TextAlign.center,
-                  Strings.kFourthWhenWakeUp,
+                  Strings.kFifthWhenEndDay,
                   style: currentTheme.textTheme.bodySmall
                       ?.copyWith(fontWeight: FontWeight.bold),
                 ),
@@ -48,8 +48,9 @@ class FourthTabView extends ConsumerWidget {
               const Expanded(
                 flex: 2,
                 child: BasicNoteContainer(
-                    imagePath: 'assets/images/wake_up.svg',
-                    text: Strings.kFourthGettingHydrated),
+                  imagePath: 'assets/images/sleep.svg',
+                  text: Strings.kFifthDrinkingWater,
+                ),
               ),
               Expanded(
                   flex: 6,
@@ -68,7 +69,7 @@ class FourthTabView extends ConsumerWidget {
                     child: GetStartedButton(
                       text: Strings.kFirstNextBtn,
                       onTap: () {
-                        Navigator.pushNamed(context, '/fifth');
+                        //   Navigator.pushNamed(context, '/second');
                       },
                     ),
                   )),

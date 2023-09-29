@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/core/const/device_size.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 
 class CustomTimePicker extends ConsumerStatefulWidget {
@@ -34,17 +35,22 @@ class CustomTimePickerState extends ConsumerState<CustomTimePicker> {
   @override
   Widget build(BuildContext context) {
     final currentTheme = ref.watch(themeProvider);
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        GestureDetector(
-          onTap: () => _selectTime(context),
-          child: Text(
-            "${_selectedTime.hour.toString().padLeft(2, '0')}:${_selectedTime.minute.toString().padLeft(2, '0')}",
-            style: currentTheme.textTheme.bodyLarge?.copyWith(fontSize: 65),
-          ),
+    return SizedBox(
+      height: DeviceSize.kHeight(context) * 0.4,
+      child: Expanded(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            GestureDetector(
+              onTap: () => _selectTime(context),
+              child: Text(
+                "${_selectedTime.hour.toString().padLeft(2, '0')}:${_selectedTime.minute.toString().padLeft(2, '0')}",
+                style: currentTheme.textTheme.bodyLarge?.copyWith(fontSize: 65),
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
