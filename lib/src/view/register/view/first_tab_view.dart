@@ -87,13 +87,10 @@ class FirstTabView extends ConsumerWidget {
                     child: GetStartedButton(
                       text: Strings.kFirstNextBtn,
                       onTap: () {
-                        // Navigator.pushNamed(context, '/second');
+                        Navigator.pushNamed(context, '/second');
                         final dataBox = getIt.get<IHiveManager>();
                         final newGender = isChecked ? 'Male' : 'Female';
                         dataBox.user.put('gender', newGender);
-                        print("tusa bastin");
-                        print(dataBox.user.get('gender'));
-                        print(newGender);
                       },
                     ),
                   )),
