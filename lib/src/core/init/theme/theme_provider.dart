@@ -28,7 +28,8 @@ class ThemeProvider extends StateNotifier<ThemeData> {
     shadowColor: const Color(0xffcfdcec),
     dialogBackgroundColor: const Color(0xffF39F5A),
     canvasColor: const Color(0xfff0f0f0),
-    primaryColor: const Color(0xff73a9e6),
+    primaryColor: const Color(0xff265cbe),
+    disabledColor: const Color(0xff6499E9),
     textTheme: TextTheme(
       bodyLarge:
           CustomTextTheme.instance!.headline38.copyWith(color: Colors.black),
@@ -55,6 +56,7 @@ class ThemeProvider extends StateNotifier<ThemeData> {
 
   static final ThemeData darkTheme = ThemeData(
     indicatorColor: Colors.white,
+    disabledColor: const Color(0xff6499E9),
     cardColor: const Color(0xff73a9e6),
     shadowColor: const Color(0xff343942),
     primaryColor: const Color(0xff5d5d5d),

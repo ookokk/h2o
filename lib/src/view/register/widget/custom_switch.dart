@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/view/register/view_model/first_tab_view_model.dart';
 
-class CustomSwitch extends StatefulWidget {
+class CustomSwitch extends ConsumerWidget {
   const CustomSwitch({
     Key? key,
   }) : super(key: key);
   @override
-  CustomSwitchState createState() => CustomSwitchState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isChecked = ref.watch(isCheckedProvider);
 
-class CustomSwitchState extends State<CustomSwitch> {
-  bool _isChecked = false;
-
-  @override
-  Widget build(BuildContext context) {
     return Transform.scale(
       scale: 1.5,
       child: Switch(
-        value: _isChecked,
+        value: isChecked,
         onChanged: (newValue) {
-          setState(() {
-            _isChecked = newValue;
-          });
+          ref.read(isCheckedProvider.notifier).state = newValue;
         },
         activeTrackColor: Colors.blue,
         activeColor: Colors.blue,

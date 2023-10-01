@@ -3,9 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:h2o_flutter/src/core/const/device_size.dart';
 import 'package:h2o_flutter/src/core/const/strings.dart';
+import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
+import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/product/widget/custom_app_bar.dart';
 import 'package:h2o_flutter/src/view/get_started/widget/get_started_button.dart';
+import 'package:h2o_flutter/src/view/register/view_model/first_tab_view_model.dart';
 import 'package:h2o_flutter/src/view/register/widget/basic_note_container.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_percent_indicator.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_switch.dart';
@@ -18,6 +21,7 @@ class FirstTabView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final currentTheme = ref.watch(themeProvider);
+    final isChecked = ref.watch(isCheckedProvider);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
@@ -65,7 +69,7 @@ class FirstTabView extends ConsumerWidget {
                         const SizedBox(
                           width: 18,
                         ),
-                        const CustomSwitch(),
+                        CustomSwitch(),
                         const SizedBox(
                           width: 18,
                         ),
@@ -83,7 +87,13 @@ class FirstTabView extends ConsumerWidget {
                     child: GetStartedButton(
                       text: Strings.kFirstNextBtn,
                       onTap: () {
-                        Navigator.pushNamed(context, '/second');
+                        // Navigator.pushNamed(context, '/second');
+                        final dataBox = getIt.get<IHiveManager>();
+                        final newGender = isChecked ? 'Male' : 'Female';
+                        dataBox.user.put('gender', newGender);
+                        print("tusa bastin");
+                        print(dataBox.user.get('gender'));
+                        print(newGender);
                       },
                     ),
                   )),

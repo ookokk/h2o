@@ -46,6 +46,12 @@ class User {
     };
   }
 
+  User copyWith({String? gender}) {
+    return User(
+      gender: gender ?? this.gender,
+    );
+  }
+
   static TimeOfDay? _parseTimeOfDay(String? timeString) {
     if (timeString == null) return null;
     final parts = timeString.split(':');
