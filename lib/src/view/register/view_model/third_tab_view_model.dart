@@ -6,6 +6,19 @@ class ThirdTabViewModel extends StateNotifier<int> {
   void updateSelectedContainerIndex(int newIndex) {
     state = newIndex;
   }
+
+  String indexToTrainingHardness(int index) {
+    switch (index) {
+      case 0:
+        return 'low';
+      case 1:
+        return 'medium';
+      case 2:
+        return 'high';
+      default:
+        return 'Undefined Hardness';
+    }
+  }
 }
 
 final thirdTabViewModelProvider =

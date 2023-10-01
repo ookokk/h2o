@@ -27,7 +27,7 @@ class UserModel extends HiveObject {
   double? dailyWaterNeed;
 
   @HiveField(6)
-  int? daysOfTrainingPerWeek;
+  String? trainingHardness;
 
   @HiveField(7)
   int? age;
@@ -39,6 +39,6 @@ class UserModel extends HiveObject {
       this.wakeUpTime,
       this.bedTime,
       this.dailyWaterNeed,
-      this.daysOfTrainingPerWeek,
+      this.trainingHardness,
       this.age});
 }

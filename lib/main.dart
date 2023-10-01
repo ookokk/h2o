@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/init/cache/locator.dart';
-import 'package:h2o_flutter/src/view/register/view/first_tab_view.dart';
+import 'package:h2o_flutter/src/view/register/view/third_tab_view.dart';
 import 'src/core/const/routes.dart';
 import 'src/core/init/theme/theme_provider.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routes: Routes.routes,
       theme: currentTheme,
-      home: FirstTabView(),
+      home: ThirdTabView(),
     );
   }
 }

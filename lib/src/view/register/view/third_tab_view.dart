@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/const/device_size.dart';
 import 'package:h2o_flutter/src/core/const/strings.dart';
+import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
+import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/product/widget/custom_app_bar.dart';
 import 'package:h2o_flutter/src/view/get_started/widget/get_started_button.dart';
+import 'package:h2o_flutter/src/view/register/view_model/third_tab_view_model.dart';
 import 'package:h2o_flutter/src/view/register/widget/basic_note_container.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_percent_indicator.dart';
 import 'package:h2o_flutter/src/view/register/widget/exercise_container.dart';
@@ -113,7 +116,13 @@ class ThirdTabView extends ConsumerWidget {
                 child: GetStartedButton(
                   text: Strings.kFirstNextBtn,
                   onTap: () {
-                    Navigator.pushNamed(context, '/fourth');
+                    //  Navigator.pushNamed(context, '/fourth');
+                    final selectedContainerIndex =
+                        ref.read(thirdTabViewModelProvider);
+                    final selectedHardness = ThirdTabViewModel()
+                        .indexToTrainingHardness(selectedContainerIndex);
+                    final dataBox = getIt.get<IHiveManager>();
+                    dataBox.user.put('trainingHardness', selectedHardness);
                   },
                 ),
               ),

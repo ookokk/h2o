@@ -23,7 +23,7 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
       wakeUpTime: fields[3] as TimeOfDay?,
       bedTime: fields[4] as TimeOfDay?,
       dailyWaterNeed: fields[5] as double?,
-      daysOfTrainingPerWeek: fields[6] as int?,
+      trainingHardness: fields[6] as String?,
       age: fields[7] as int?,
     );
   }
@@ -45,7 +45,7 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
       ..writeByte(5)
       ..write(obj.dailyWaterNeed)
       ..writeByte(6)
-      ..write(obj.daysOfTrainingPerWeek)
+      ..write(obj.trainingHardness)
       ..writeByte(7)
       ..write(obj.age);
   }
