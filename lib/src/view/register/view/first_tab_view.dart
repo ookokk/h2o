@@ -69,7 +69,7 @@ class FirstTabView extends ConsumerWidget {
                         const SizedBox(
                           width: 18,
                         ),
-                        CustomSwitch(),
+                        const CustomSwitch(),
                         const SizedBox(
                           width: 18,
                         ),

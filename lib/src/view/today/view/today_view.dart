@@ -5,7 +5,7 @@ import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class TodayView extends ConsumerWidget {
-  TodayView({
+  const TodayView({
     Key? key,
   }) : super(key: key);
   final double progressPercent = 0.55;

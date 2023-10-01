@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
+import 'package:h2o_flutter/src/view/register/view_model/second_tab_view_model.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class WeightPicker extends ConsumerStatefulWidget {
@@ -13,16 +14,15 @@ class WeightPicker extends ConsumerStatefulWidget {
 }
 
 class WeightPickerState extends ConsumerState<WeightPicker> {
-  int _weight = 70;
-
   @override
   Widget build(BuildContext context) {
     final currentTheme = ref.watch(themeProvider);
+    final weight = ref.watch(weightProvider.notifier).state;
     return Row(
       children: <Widget>[
         NumberPicker(
           textStyle: currentTheme.textTheme.headlineMedium,
-          value: _weight,
+          value: weight,
           decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(14),
@@ -31,7 +31,7 @@ class WeightPickerState extends ConsumerState<WeightPicker> {
           maxValue: 150,
           onChanged: (value) {
             setState(() {
-              _weight = value;
+              ref.read(weightProvider.notifier).state = value;
             });
           },
           itemHeight: 70,
