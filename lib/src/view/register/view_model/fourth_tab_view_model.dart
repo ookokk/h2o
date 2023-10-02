@@ -6,3 +6,4 @@ class FourthTabViewModel extends StateNotifier<int> {
 }
 
 final wakeUpTimeProvider = StateProvider<TimeOfDay?>((ref) => TimeOfDay.now());
+final bedTimeProvider = StateProvider<TimeOfDay?>((ref) => TimeOfDay.now());

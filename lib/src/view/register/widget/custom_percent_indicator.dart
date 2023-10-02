@@ -9,8 +9,8 @@ class CustomPercentIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LinearPercentIndicator(
-      lineHeight: 20.0,
-      animationDuration: 3000,
+      lineHeight: 17.0,
+      animationDuration: 1500,
       percent: percent,
       animateFromLastPercent: true,
       progressColor: Colors.blue,

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:h2o_flutter/src/view/history/view/history_view.dart';
 import 'package:h2o_flutter/src/view/home/view/home_view.dart';
 import 'package:h2o_flutter/src/view/profile/view/profile_view.dart';
+import 'package:h2o_flutter/src/view/register/view/almost_done_view.dart';
 import 'package:h2o_flutter/src/view/register/view/fifth_tab_view.dart';
 import 'package:h2o_flutter/src/view/register/view/first_tab_view.dart';
 import 'package:h2o_flutter/src/view/register/view/fourth_tab_view.dart';
+import 'package:h2o_flutter/src/view/register/view/register_view.dart';
 import 'package:h2o_flutter/src/view/register/view/second_tab_view.dart';
 import 'package:h2o_flutter/src/view/register/view/third_tab_view.dart';
 import 'package:h2o_flutter/src/view/get_started/view/get_started_view.dart';
@@ -16,12 +18,13 @@ class Routes {
   static const String splash = '/splash';
   static const String getStarted = '/getStarted';
   //REGISTER
+  static const String register = '/register';
   static const String firstTab = '/first';
   static const String secondTab = '/second';
   static const String thirdTab = '/third';
   static const String fourthTab = '/fourth';
   static const String fifthTab = '/fifth';
-
+  static const String almostDone = '/almost';
   //HOME
   static const String home = '/home';
   static const String water = '/water';
@@ -40,5 +43,7 @@ class Routes {
     water: (context) => const TodayView(),
     progress: (context) => const HistoryView(),
     profile: (context) => const ProfileView(),
+    register: (context) => RegisterView(),
+    almostDone: (context) => const AlmostDoneView(),
   };
 }

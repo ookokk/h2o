@@ -36,7 +36,9 @@ class GetStartedView extends ConsumerWidget {
                   height: 155,
                 ),
                 GetStartedButton(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/register');
+                  },
                   text: Strings.kGetSBtn,
                 ),
                 const SizedBox(

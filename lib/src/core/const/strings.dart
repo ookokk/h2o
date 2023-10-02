@@ -35,6 +35,9 @@ class Strings {
   static const String kFifthWhenEndDay = "When do you usually end a day?";
   static const String kFifthDrinkingWater =
       "Drinking water 1 hour before sleep will keep you hydrated during your dream";
+  //almost done
+  static const String kAlmostYouAre = "You are almost done!";
+  static const String kAlmostComplete = "Complete Login";
 
   //home
   //profile
