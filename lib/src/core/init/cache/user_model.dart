@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 part 'user_model.g.dart';
@@ -18,26 +17,34 @@ class UserModel extends HiveObject {
   double? weight;
 
   @HiveField(3)
-  TimeOfDay? wakeUpTime;
+  int? wakeUpHour;
 
   @HiveField(4)
-  TimeOfDay? bedTime;
+  int? wakeUpMinute;
 
   @HiveField(5)
-  double? dailyWaterNeed;
+  int? bedHour;
 
   @HiveField(6)
-  String? trainingHardness;
+  int? bedMinute;
 
   @HiveField(7)
+  double? dailyWaterNeed;
+
+  @HiveField(8)
+  String? trainingHardness;
+
+  @HiveField(9)
   int? age;
 
   UserModel(
       {this.id,
       this.gender,
       this.weight,
-      this.wakeUpTime,
-      this.bedTime,
+      this.wakeUpHour,
+      this.wakeUpMinute,
+      this.bedHour,
+      this.bedMinute,
       this.dailyWaterNeed,
       this.trainingHardness,
       this.age});

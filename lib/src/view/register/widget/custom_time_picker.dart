@@ -1,53 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/const/device_size.dart';
+import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
+import 'package:h2o_flutter/src/view/register/view_model/fourth_tab_view_model.dart';
 
-class CustomTimePicker extends ConsumerStatefulWidget {
-  final ValueChanged<TimeOfDay> onTimeSelected;
-  const CustomTimePicker({Key? key, required this.onTimeSelected})
-      : super(key: key);
-  @override
-  CustomTimePickerState createState() => CustomTimePickerState();
-}
-
-class CustomTimePickerState extends ConsumerState<CustomTimePicker> {
-  TimeOfDay _selectedTime = TimeOfDay.now();
-  Future<void> _selectTime(BuildContext context) async {
-    final currentTheme = ref.watch(themeProvider);
-    final TimeOfDay? picked = await showTimePicker(
-        context: context,
-        initialTime: _selectedTime,
-        builder: (BuildContext context, Widget? child) {
-          return Theme(
-            data: ThemeData(primaryColor: currentTheme.primaryColor),
-            child: child!,
-          );
-        });
-    if (picked != null && picked != _selectedTime) {
-      setState(() {
-        _selectedTime = picked;
-        widget.onTimeSelected(picked);
-      });
-    }
-  }
+class CustomTimePicker extends ConsumerWidget {
+  const CustomTimePicker({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final wakeUpTime = ref.watch(wakeUpTimeProvider);
     final currentTheme = ref.watch(themeProvider);
-    return SizedBox(
-      height: DeviceSize.kHeight(context) * 0.4,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          GestureDetector(
-            onTap: () => _selectTime(context),
-            child: Text(
-              "${_selectedTime.hour.toString().padLeft(2, '0')}:${_selectedTime.minute.toString().padLeft(2, '0')}",
-              style: currentTheme.textTheme.bodyLarge?.copyWith(fontSize: 65),
-            ),
-          ),
-        ],
+    return InkWell(
+      onTap: () async {
+        final selectedTime = await showTimePicker(
+          builder: (BuildContext context, Widget? child) {
+            return Theme(
+                data: ThemeData(primaryColor: currentTheme.primaryColor),
+                child: child!);
+          },
+          context: context,
+          initialTime: wakeUpTime ?? TimeOfDay.now(),
+        );
+
+        if (selectedTime != null) {
+          ref.read(wakeUpTimeProvider.notifier).state = selectedTime;
+        }
+      },
+      child: Text(
+        wakeUpTime != null
+            ? '${wakeUpTime.hour}:${wakeUpTime.minute.toString().padLeft(2, '0')}'
+            : Strings.kFourthSelectTime,
+        style: currentTheme.textTheme.bodyLarge
+            ?.copyWith(fontSize: 60, fontWeight: FontWeight.w500),
       ),
     );
   }

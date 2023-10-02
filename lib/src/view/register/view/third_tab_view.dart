@@ -116,7 +116,7 @@ class ThirdTabView extends ConsumerWidget {
                 child: GetStartedButton(
                   text: Strings.kFirstNextBtn,
                   onTap: () {
-                    //  Navigator.pushNamed(context, '/fourth');
+                    Navigator.pushNamed(context, '/fourth');
                     final selectedContainerIndex =
                         ref.read(thirdTabViewModelProvider);
                     final selectedHardness = ThirdTabViewModel()

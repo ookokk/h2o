@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/const/device_size.dart';
 import 'package:h2o_flutter/src/core/const/strings.dart';
+import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
+import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/product/widget/custom_app_bar.dart';
 import 'package:h2o_flutter/src/view/get_started/widget/get_started_button.dart';
+import 'package:h2o_flutter/src/view/register/view_model/fourth_tab_view_model.dart';
 import 'package:h2o_flutter/src/view/register/widget/basic_note_container.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_percent_indicator.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_time_picker.dart';
@@ -51,14 +54,12 @@ class FourthTabView extends ConsumerWidget {
                     imagePath: 'assets/images/wake_up.svg',
                     text: Strings.kFourthGettingHydrated),
               ),
-              Expanded(
+              const Expanded(
                   flex: 6,
                   child: SizedBox(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomTimePicker(onTimeSelected: (selectedTime) {})
-                      ],
+                      children: [CustomTimePicker()],
                     ),
                   )),
               Expanded(
@@ -69,6 +70,13 @@ class FourthTabView extends ConsumerWidget {
                       text: Strings.kFirstNextBtn,
                       onTap: () {
                         Navigator.pushNamed(context, '/fifth');
+                        final currentSelectedTime =
+                            ref.read(wakeUpTimeProvider);
+                        final dataBox = getIt.get<IHiveManager>();
+                        dataBox.user
+                            .put('wakeUpHour', currentSelectedTime?.hour);
+                        dataBox.user
+                            .put('wakeUpMinute', currentSelectedTime?.minute);
                       },
                     ),
                   )),

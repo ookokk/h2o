@@ -20,18 +20,20 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
       id: fields[0] as int?,
       gender: fields[1] as String?,
       weight: fields[2] as double?,
-      wakeUpTime: fields[3] as TimeOfDay?,
-      bedTime: fields[4] as TimeOfDay?,
-      dailyWaterNeed: fields[5] as double?,
-      trainingHardness: fields[6] as String?,
-      age: fields[7] as int?,
+      wakeUpHour: fields[3] as int?,
+      wakeUpMinute: fields[4] as int?,
+      bedHour: fields[5] as int?,
+      bedMinute: fields[6] as int?,
+      dailyWaterNeed: fields[7] as double?,
+      trainingHardness: fields[8] as String?,
+      age: fields[9] as int?,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserModel obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -39,14 +41,18 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
       ..writeByte(2)
       ..write(obj.weight)
       ..writeByte(3)
-      ..write(obj.wakeUpTime)
+      ..write(obj.wakeUpHour)
       ..writeByte(4)
-      ..write(obj.bedTime)
+      ..write(obj.wakeUpMinute)
       ..writeByte(5)
-      ..write(obj.dailyWaterNeed)
+      ..write(obj.bedHour)
       ..writeByte(6)
-      ..write(obj.trainingHardness)
+      ..write(obj.bedMinute)
       ..writeByte(7)
+      ..write(obj.dailyWaterNeed)
+      ..writeByte(8)
+      ..write(obj.trainingHardness)
+      ..writeByte(9)
       ..write(obj.age);
   }
 
