@@ -4,6 +4,7 @@ import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
 import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
+import 'package:h2o_flutter/src/product/calculate/calculate_daily_water_intake.dart';
 import 'package:h2o_flutter/src/view/get_started/widget/get_started_button.dart';
 import 'package:h2o_flutter/src/view/register/view_model/first_tab_view_model.dart';
 import 'package:h2o_flutter/src/view/register/view_model/fourth_tab_view_model.dart';
@@ -23,7 +24,7 @@ class AlmostDoneButton extends ConsumerWidget {
         onTap: () {
           final dataBox = getIt.get<IHiveManager>();
           //1
-          final newGender = isChecked ? 'Male' : 'Female';
+          final newGender = isChecked ? 'male' : 'female';
           dataBox.user.put('gender', newGender);
           //2
           final currentWeight = ref.watch(weightProvider.notifier).state;
@@ -41,6 +42,14 @@ class AlmostDoneButton extends ConsumerWidget {
           final selectedBedTime = ref.read(bedTimeProvider);
           dataBox.user.put('bedHour', selectedBedTime?.hour);
           dataBox.user.put('bedMinute', selectedBedTime?.minute);
+          //calculate
+          dataBox.user.put('isRegistered', true);
+          final currentIntake = CalculateDailyWaterIntake()
+              .calculateWaterIntake(selectedHardness, currentWeight, newGender);
+          dataBox.user.put('dailyWaterNeed', currentIntake);
+          //test
+
+          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
         },
         text: Strings.kAlmostComplete,
         color: currentTheme.canvasColor,

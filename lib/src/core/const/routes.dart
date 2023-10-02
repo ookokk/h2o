@@ -40,7 +40,7 @@ class Routes {
     fourthTab: (context) => const FourthTabView(),
     fifthTab: (context) => const FifthTabView(),
     home: (context) => const HomeView(),
-    water: (context) => const TodayView(),
+    water: (context) => TodayView(),
     progress: (context) => const HistoryView(),
     profile: (context) => const ProfileView(),
     register: (context) => RegisterView(),

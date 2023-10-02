@@ -38,7 +38,8 @@ class Strings {
   //almost done
   static const String kAlmostYouAre = "You are almost done!";
   static const String kAlmostComplete = "Complete Login";
-
+  //today
+  static const String kTodayDrinkTarget = "Drink Target";
   //home
   //profile
 }

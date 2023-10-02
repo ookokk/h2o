@@ -37,6 +37,9 @@ class UserModel extends HiveObject {
   @HiveField(9)
   int? age;
 
+  @HiveField(10)
+  bool? isRegistered = false;
+
   UserModel(
       {this.id,
       this.gender,

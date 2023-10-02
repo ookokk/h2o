@@ -27,13 +27,13 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
       dailyWaterNeed: fields[7] as double?,
       trainingHardness: fields[8] as String?,
       age: fields[9] as int?,
-    );
+    )..isRegistered = fields[10] as bool?;
   }
 
   @override
   void write(BinaryWriter writer, UserModel obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(11)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -53,7 +53,9 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
       ..writeByte(8)
       ..write(obj.trainingHardness)
       ..writeByte(9)
-      ..write(obj.age);
+      ..write(obj.age)
+      ..writeByte(10)
+      ..write(obj.isRegistered);
   }
 
   @override

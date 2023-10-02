@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/const/device_size.dart';
+import 'package:h2o_flutter/src/core/const/strings.dart';
+import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
+import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class TodayView extends ConsumerWidget {
-  const TodayView({
+  TodayView({
     Key? key,
   }) : super(key: key);
   final double progressPercent = 0.55;
+  final dataBox = getIt.get<IHiveManager>();
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final currentTheme = ref.watch(themeProvider);
@@ -29,11 +34,15 @@ class TodayView extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Drink Target",
+                      Strings.kTodayDrinkTarget,
                       style: currentTheme.textTheme.headlineLarge,
                     ),
                     Text(
-                      "1800 / 2500 ml",
+                      dataBox.user.get('dailyWaterNeed').toString(),
+                      style: currentTheme.textTheme.displaySmall,
+                    ),
+                    Text(
+                      'mL',
                       style: currentTheme.textTheme.headlineLarge,
                     ),
                   ],

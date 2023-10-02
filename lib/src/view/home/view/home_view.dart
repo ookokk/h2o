@@ -49,10 +49,10 @@ class HomeViewState extends ConsumerState<HomeView> {
               selectedIndex = index;
             });
           },
-          children: const [
+          children: [
             TodayView(),
-            HistoryView(),
-            ProfileView(),
+            const HistoryView(),
+            const ProfileView(),
           ],
         ),
         bottomNavigationBar: CustomNavBar(
