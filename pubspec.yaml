@@ -22,6 +22,7 @@ dependencies:
   flutter_riverpod: ^2.4.0
   #google
   firebase_core: ^2.17.0
+  cloud_firestore: ^4.9.3
   #test
   path_provider: ^2.1.1
   #language

@@ -8,13 +8,12 @@ import 'package:h2o_flutter/src/core/init/cache/shared_manager.dart';
 final GetIt getIt = GetIt.instance;
 
 Future<void> initLocator() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
   WidgetsFlutterBinding.ensureInitialized();
   getIt.registerSingletonAsync<IHiveManager>(() async => HiveManager().init());
   getIt.registerSingletonAsync<ISharedPreferencesManager>(
       () async => SharedPreferencesManager().init());
-
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await getIt.allReady();
 }
