@@ -49,6 +49,9 @@ class ThemeProvider extends StateNotifier<ThemeData> {
           CustomTextTheme.instance!.headline16.copyWith(color: Colors.black),
       headlineMedium:
           CustomTextTheme.instance!.headline14.copyWith(color: Colors.black),
+      titleLarge: CustomTextTheme.instance!.headline20
+          .copyWith(color: Colors.white)
+          .copyWith(letterSpacing: 1),
     ),
     scaffoldBackgroundColor: Colors.white,
     bottomAppBarTheme: const BottomAppBarTheme(color: Color(0xff73a9e6)),
@@ -82,6 +85,9 @@ class ThemeProvider extends StateNotifier<ThemeData> {
           CustomTextTheme.instance!.headline16.copyWith(color: Colors.white),
       headlineMedium:
           CustomTextTheme.instance!.headline14.copyWith(color: Colors.white),
+      titleLarge: CustomTextTheme.instance!.headline20
+          .copyWith(color: Colors.black)
+          .copyWith(letterSpacing: 1),
     ),
     scaffoldBackgroundColor: const Color(0xff27323a),
     bottomAppBarTheme: const BottomAppBarTheme(color: Color(0xff5d5d5d)),

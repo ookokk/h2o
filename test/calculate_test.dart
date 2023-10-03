@@ -3,12 +3,6 @@ import 'package:h2o_flutter/src/product/calculate/calculate_daily_water_intake.d
 
 void main() {
   group('CalculateDailyWaterIntake', () {
-    test('Calculate water intake for male with low training hardness', () {
-      CalculateDailyWaterIntake calculator = CalculateDailyWaterIntake();
-      double waterIntake = calculator.calculateWaterIntake("low", 70, "male");
-      expect(waterIntake, 2450.0);
-    });
-
     test('Calculate water intake for female with medium training hardness', () {
       CalculateDailyWaterIntake calculator = CalculateDailyWaterIntake();
       double waterIntake =

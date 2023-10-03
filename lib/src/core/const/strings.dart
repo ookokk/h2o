@@ -40,6 +40,11 @@ class Strings {
   static const String kAlmostComplete = "Complete Login";
   //today
   static const String kTodayDrinkTarget = "Drink Target";
+  static const String kHomeHydration = "Hydration level";
+  static const String kHomeToday = "Today's Record";
+  static const String kHome300ml = "300 mL";
+  static const String kHomeMl = "mL";
   //home
+
   //profile
 }

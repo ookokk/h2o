@@ -40,6 +40,9 @@ class UserModel extends HiveObject {
   @HiveField(10)
   bool? isRegistered = false;
 
+  @HiveField(11)
+  double? updatingWaterNeed;
+
   UserModel(
       {this.id,
       this.gender,
@@ -50,5 +53,7 @@ class UserModel extends HiveObject {
       this.bedMinute,
       this.dailyWaterNeed,
       this.trainingHardness,
+      this.isRegistered,
+      this.updatingWaterNeed,
       this.age});
 }

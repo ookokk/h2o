@@ -47,6 +47,7 @@ class AlmostDoneButton extends ConsumerWidget {
           final currentIntake = CalculateDailyWaterIntake()
               .calculateWaterIntake(selectedHardness, currentWeight, newGender);
           dataBox.user.put('dailyWaterNeed', currentIntake);
+          dataBox.user.put('updatingWaterNeed', currentIntake);
           //test
 
           Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
