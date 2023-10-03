@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "648959557724",
+    "project_id": "h20-water-reminder",
+    "storage_bucket": "h20-water-reminder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648959557724:android:ab2cb675aa70676e0a6699",
+        "android_client_info": {
+          "package_name": "com.okok.h2o_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoMJEFhOeEdM2h2KUGDVvQ9vno9EGIino"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -20,6 +20,7 @@ class _SplashViewState extends ConsumerState<SplashView> with SplashViewModel {
   @override
   void initState() {
     super.initState();
+    checkInternetConnectivity();
     Future.delayed(const Duration(seconds: 3), () {
       final dataBox = getIt.get<IHiveManager>();
       final isRegistered = dataBox.user.get('isRegistered');

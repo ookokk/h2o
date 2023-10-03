@@ -38,6 +38,5 @@ class WaterIntakeViewModel extends ChangeNotifier {
 
 final waterIntakeProvider = ChangeNotifierProvider<WaterIntakeViewModel>((ref) {
   final dataBox = getIt.get<IHiveManager>();
-
   return WaterIntakeViewModel(dataBox);
 });

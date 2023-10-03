@@ -15,7 +15,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
     _connectionStatus = await connectivity.checkConnectivity();
 
     if (_connectionStatus == ConnectivityResult.none) {
-      _showNoInternetAlertDialog();
+      showNoInternetAlertDialog();
     } else {
       Future.delayed(const Duration(seconds: 3), () {
         //   Navigator.pushNamed(context, Routes.getStarted);
@@ -23,7 +23,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
     }
   }
 
-  void _showNoInternetAlertDialog() {
+  void showNoInternetAlertDialog() {
     showDialog(
       context: context,
       builder: (context) {
