@@ -19,7 +19,7 @@ void main() {
     test('Decreasing water intake works correctly', () {
       hiveManager.user.put('dailyWaterNeed', 2000);
 
-      viewModel.decreaseWaterIntakeBy300Ml();
+      viewModel.increaseWaterIntakeBy300Ml();
 
       expect(hiveManager.user.get('dailyWaterNeed'), 1700);
     });

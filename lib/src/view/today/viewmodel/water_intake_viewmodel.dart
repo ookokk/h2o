@@ -10,9 +10,19 @@ class WaterIntakeViewModel extends ChangeNotifier {
 
   double get dailyWaterNeed => fetchDailyWaterNeed();
 
-  void decreaseWaterIntakeBy300Ml() {
+  void increaseWaterIntakeBy300Ml() {
     final currentWaterNeed = fetchDailyWaterNeed();
     final newWaterNeed = currentWaterNeed - 300;
+
+    if (newWaterNeed >= 0) {
+      dataBox.user.put('updatingWaterNeed', newWaterNeed);
+      notifyListeners();
+    }
+  }
+
+  void decreaseWaterIntakeBy300Ml() {
+    final currentWaterNeed = fetchDailyWaterNeed();
+    final newWaterNeed = currentWaterNeed + 300;
 
     if (newWaterNeed >= 0) {
       dataBox.user.put('updatingWaterNeed', newWaterNeed);
@@ -28,5 +38,6 @@ class WaterIntakeViewModel extends ChangeNotifier {
 
 final waterIntakeProvider = ChangeNotifierProvider<WaterIntakeViewModel>((ref) {
   final dataBox = getIt.get<IHiveManager>();
+
   return WaterIntakeViewModel(dataBox);
 });

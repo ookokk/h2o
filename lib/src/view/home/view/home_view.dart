@@ -22,7 +22,7 @@ class HomeViewState extends ConsumerState<HomeView> {
         appBar: const HomeAppBar(title: Strings.kHomeHydration),
         resizeToAvoidBottomInset: false,
         backgroundColor: currentTheme.scaffoldBackgroundColor,
-        body: Center(child: TodayView()),
+        body: const Center(child: TodayView()),
       ),
     );
   }
