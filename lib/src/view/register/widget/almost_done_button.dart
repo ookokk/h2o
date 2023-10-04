@@ -10,6 +10,7 @@ import 'package:h2o_flutter/src/view/register/view_model/first_tab_view_model.da
 import 'package:h2o_flutter/src/view/register/view_model/fourth_tab_view_model.dart';
 import 'package:h2o_flutter/src/view/register/view_model/second_tab_view_model.dart';
 import 'package:h2o_flutter/src/view/register/view_model/third_tab_view_model.dart';
+import 'package:uuid/uuid.dart';
 
 class AlmostDoneButton extends ConsumerWidget {
   const AlmostDoneButton({
@@ -47,8 +48,10 @@ class AlmostDoneButton extends ConsumerWidget {
           final currentIntake = CalculateDailyWaterIntake()
               .calculateWaterIntake(selectedHardness, currentWeight, newGender);
           dataBox.user.put('dailyWaterNeed', currentIntake);
-          dataBox.user.put('updatingWaterNeed', currentIntake);
-          //test
+          dataBox.user.put('updatingWaterNeed', 0);
+          //userid
+          const Uuid uuid = Uuid();
+          dataBox.user.put('userId', uuid.v4());
 
           Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
         },

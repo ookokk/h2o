@@ -10,6 +10,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   #cache
+  uuid: ^4.1.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   shared_preferences: ^2.2.1
@@ -28,12 +29,12 @@ dependencies:
   #language
   easy_localization: ^3.0.3
   #material
-  kartal: ^3.4.2
   lottie: ^2.6.0
   flutter_svg: ^2.0.7
   numberpicker: ^2.1.2
   percent_indicator: ^4.2.3
   fl_chart: ^0.63.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
