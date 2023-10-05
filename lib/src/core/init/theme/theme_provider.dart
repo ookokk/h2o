@@ -26,6 +26,7 @@ class ThemeProvider extends StateNotifier<ThemeData> {
     brightness: Brightness.light,
     cardColor: const Color(0xff94c359),
     shadowColor: const Color(0xffcfdcec),
+    splashColor: Colors.white,
     dialogBackgroundColor: const Color(0xffF39F5A),
     canvasColor: const Color(0xfff0f0f0),
     primaryColor: const Color(0xff265cbe),
@@ -50,8 +51,9 @@ class ThemeProvider extends StateNotifier<ThemeData> {
       headlineMedium:
           CustomTextTheme.instance!.headline14.copyWith(color: Colors.black),
       titleLarge: CustomTextTheme.instance!.headline20
-          .copyWith(color: Colors.white)
-          .copyWith(letterSpacing: 1),
+          .copyWith(color: Colors.white, letterSpacing: 1),
+      labelMedium:
+          CustomTextTheme.instance!.headline14.copyWith(color: Colors.white),
     ),
     scaffoldBackgroundColor: Colors.white,
     bottomAppBarTheme: const BottomAppBarTheme(color: Color(0xff73a9e6)),
@@ -63,6 +65,7 @@ class ThemeProvider extends StateNotifier<ThemeData> {
     cardColor: const Color(0xff73a9e6),
     shadowColor: const Color(0xff343942),
     primaryColor: const Color(0xff5d5d5d),
+    splashColor: Colors.black,
     canvasColor: const Color(0xffcdcdd2),
     dialogBackgroundColor: const Color(0xffF39F5A),
     brightness: Brightness.dark,
@@ -86,8 +89,9 @@ class ThemeProvider extends StateNotifier<ThemeData> {
       headlineMedium:
           CustomTextTheme.instance!.headline14.copyWith(color: Colors.white),
       titleLarge: CustomTextTheme.instance!.headline20
-          .copyWith(color: Colors.black)
-          .copyWith(letterSpacing: 1),
+          .copyWith(color: Colors.black, letterSpacing: 1),
+      labelMedium:
+          CustomTextTheme.instance!.headline14.copyWith(color: Colors.black),
     ),
     scaffoldBackgroundColor: const Color(0xff27323a),
     bottomAppBarTheme: const BottomAppBarTheme(color: Color(0xff5d5d5d)),

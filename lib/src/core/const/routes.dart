@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:h2o_flutter/src/view/history/view/history_view.dart';
 import 'package:h2o_flutter/src/view/home/view/home_view.dart';
 import 'package:h2o_flutter/src/view/profile/view/profile_view.dart';
 import 'package:h2o_flutter/src/view/register/view/almost_done_view.dart';
@@ -30,6 +29,7 @@ class Routes {
   static const String water = '/water';
   static const String progress = '/progress';
   static const String profile = '/profile';
+  static const String alarm = '/alarm';
 
   static final Map<String, WidgetBuilder> routes = {
     splash: (context) => const SplashView(),
@@ -41,7 +41,6 @@ class Routes {
     fifthTab: (context) => const FifthTabView(),
     home: (context) => const HomeView(),
     water: (context) => const TodayView(),
-    progress: (context) => const HistoryView(),
     profile: (context) => const ProfileView(),
     register: (context) => RegisterView(),
     almostDone: (context) => const AlmostDoneView(),

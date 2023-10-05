@@ -11,11 +11,9 @@ class WaterIntakeModel {
     final timestamp = json['dateTime'];
 
     if (recordId is int && timestamp is String) {
-      print('else if');
       final parsedDateTime = DateTime.tryParse(timestamp);
 
       if (parsedDateTime != null) {
-        print('ikinci if if');
         return WaterIntakeModel(
           recordId: recordId,
           dateTime: parsedDateTime,
@@ -23,7 +21,6 @@ class WaterIntakeModel {
         );
       }
     }
-    print('kosulsuz if');
     return WaterIntakeModel(
       recordId: 0,
       dateTime: DateTime.now(),

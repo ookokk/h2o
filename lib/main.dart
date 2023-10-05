@@ -5,7 +5,7 @@ import 'package:h2o_flutter/src/view/splash/view/splash_view.dart';
 import 'src/core/const/routes.dart';
 import 'src/core/init/theme/theme_provider.dart';
 
-void main() async {
+void main() {
   initLocator();
   runApp(const ProviderScope(child: MyApp()));
 }

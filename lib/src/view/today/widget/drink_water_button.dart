@@ -61,13 +61,11 @@ class DrinkWaterButton extends ConsumerWidget {
           )),
           Expanded(
             flex: 3,
-            child: Text(
-              text ?? "",
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.fade,
-              style: textStyle ?? currentTheme.textTheme.titleLarge,
-            ),
+            child: Text(text ?? "",
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.fade,
+                style: textStyle ?? currentTheme.textTheme.labelMedium),
           )
         ],
       ),
