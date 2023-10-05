@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
 import 'package:h2o_flutter/src/core/init/cache/locator.dart';
-import 'package:h2o_flutter/src/product/model/water_intake_record.dart';
+import 'package:h2o_flutter/src/product/model/water_intake_model.dart';
 import 'dart:math';
 
 class WaterIntakeRepository {
@@ -9,7 +9,7 @@ class WaterIntakeRepository {
   final Random _random = Random();
 
   Future<void> addWaterIntakeRecord(
-      String userId, WaterIntakeRecord record) async {
+      String userId, WaterIntakeModel record) async {
     try {
       final dataBox = getIt.get<IHiveManager>();
       final userId = dataBox.user.get('userId');
@@ -40,7 +40,7 @@ class WaterIntakeRepository {
     }
   }
 
-  Stream<List<WaterIntakeRecord>> getWaterIntakeRecords(String userId) {
+  Stream<List<WaterIntakeModel>> getWaterIntakeRecords(String userId) {
     try {
       return _firestore
           .collection('users')
@@ -49,7 +49,7 @@ class WaterIntakeRepository {
           .orderBy('dateTime', descending: true)
           .snapshots()
           .map((querySnapshot) => querySnapshot.docs
-              .map((doc) => WaterIntakeRecord.fromJson(doc.data()))
+              .map((doc) => WaterIntakeModel.fromJson(doc.data()))
               .toList());
     } catch (e) {
       print("Hata oluştu: $e");

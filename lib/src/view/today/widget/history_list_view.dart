@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
+import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
-import 'package:h2o_flutter/src/product/model/water_intake_record.dart';
+import 'package:h2o_flutter/src/product/model/water_intake_model.dart';
 import 'package:h2o_flutter/src/product/repository/water_intake_repository.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,20 +16,19 @@ class HistoryListView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final WaterIntakeRepository waterIntakeRepository = WaterIntakeRepository();
+    final dataBox = getIt.get<IHiveManager>();
     final currentTheme = ref.watch(themeProvider);
-    return StreamBuilder<List<WaterIntakeRecord>>(
-      stream: waterIntakeRepository.getWaterIntakeRecords('user1'),
+    return StreamBuilder<List<WaterIntakeModel>>(
+      stream: waterIntakeRepository
+          .getWaterIntakeRecords(dataBox.user.get('userId')),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Text('Hata: ${snapshot.error}');
         }
-
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const CircularProgressIndicator();
         }
-
-        final waterIntakeRecords = snapshot.data ?? []; // Veriyi al
-
+        final waterIntakeRecords = snapshot.data ?? [];
         return ListView.builder(
           itemCount: waterIntakeRecords.length,
           itemBuilder: (context, index) {
