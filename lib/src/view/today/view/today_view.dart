@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
-import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/view/today/viewmodel/itoday_state.dart';
 import 'package:h2o_flutter/src/view/today/widget/history_list_view.dart';
@@ -14,8 +12,7 @@ class TodayView extends ConsumerStatefulWidget {
 }
 
 class TodayViewState extends ConsumerState<TodayView> with ITodayState {
-  final dataBox = getIt.get<IHiveManager>();
-
+  @override
   @override
   Widget build(BuildContext context) {
     final currentTheme = ref.watch(themeProvider);

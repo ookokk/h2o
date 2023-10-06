@@ -67,7 +67,7 @@ class Strings {
   static const String kAlarmIsRinging = "is ringing!";
   static const String kAlarmSnooze = "Snooze";
   static const String kAlarmStop = "Stop";
-  static const String kAlarmRingNow = "RING NOW";
+  static const String kAlarmRingNow = "Ring Now";
 
   //profile
 }

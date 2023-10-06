@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 
-class AlarmTile extends StatelessWidget {
+class AlarmTile extends ConsumerWidget {
   final String title;
   final void Function() onPressed;
   final void Function()? onDismissed;
@@ -13,7 +15,8 @@ class AlarmTile extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentTheme = ref.watch(themeProvider);
     return Dismissible(
       key: key!,
       direction: onDismissed != null

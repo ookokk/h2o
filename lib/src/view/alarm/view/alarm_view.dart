@@ -1,6 +1,7 @@
 import 'package:alarm/alarm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/core/const/device_size.dart';
 import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/view/alarm/viewmodel/ialarm_state.dart';
@@ -46,7 +47,7 @@ class _AlarmViewState extends ConsumerState<AlarmView> with IAlarmState {
               : Center(
                   child: Text(
                     Strings.kAlarmNoAlarm,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: currentTheme.textTheme.headlineLarge,
                   ),
                 ),
         ),
@@ -56,10 +57,38 @@ class _AlarmViewState extends ConsumerState<AlarmView> with IAlarmState {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ShortcutButton(refreshAlarms: loadAlarms),
-              FloatingActionButton(
-                onPressed: () => navigateToAlarmScreen(null),
-                child: const Icon(Icons.alarm_add_rounded, size: 33),
-              ),
+              ElevatedButton(
+                  style: ButtonStyle(
+                    minimumSize: MaterialStateProperty.all<Size>(
+                      Size(
+                        DeviceSize.kWidth(context) * 0.25,
+                        DeviceSize.kHeight(context) * 0.07,
+                      ),
+                    ),
+                    maximumSize: MaterialStateProperty.all<Size>(
+                      Size(
+                        DeviceSize.kWidth(context) * 0.25,
+                        DeviceSize.kHeight(context) * 0.08,
+                      ),
+                    ),
+                    elevation: MaterialStateProperty.all<double>(3),
+                    shape: MaterialStateProperty.all<OutlinedBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(34),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      currentTheme.primaryColor,
+                    ),
+                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                    ),
+                  ),
+                  onPressed: () => navigateToAlarmScreen(null),
+                  child: const Icon(
+                    Icons.alarm_add_outlined,
+                    size: 35,
+                  )),
             ],
           ),
         ),
