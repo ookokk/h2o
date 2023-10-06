@@ -26,7 +26,11 @@ class HistoryListView extends ConsumerWidget {
           return Text('Hata: ${snapshot.error}');
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const CircularProgressIndicator();
+          return Icon(
+            Icons.refresh,
+            color: currentTheme.indicatorColor,
+            size: 40,
+          );
         }
         final waterIntakeRecords = snapshot.data ?? [];
         return ListView.builder(
@@ -56,7 +60,7 @@ class HistoryListView extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         '${record.dateTime.hour.toString()} : ${record.dateTime.minute.toString()}',
-                        style: currentTheme.textTheme.displayLarge,
+                        style: currentTheme.textTheme.headlineLarge,
                       ),
                     )
                   ],

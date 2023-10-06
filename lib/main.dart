@@ -4,7 +4,6 @@ import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/view/splash/view/splash_view.dart';
 import 'src/core/const/routes.dart';
 import 'src/core/init/theme/theme_provider.dart';
-import 'src/view/alarm/view/alarm_view.dart';
 
 void main() {
   initLocator();
@@ -21,7 +20,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routes: Routes.routes,
       theme: currentTheme,
-      home: AlarmView(),
+      home: const SplashView(),
     );
   }
 }

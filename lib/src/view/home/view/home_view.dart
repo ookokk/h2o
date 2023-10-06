@@ -19,7 +19,12 @@ class HomeViewState extends ConsumerState<HomeView> {
     final currentTheme = ref.watch(themeProvider);
     return SafeArea(
       child: Scaffold(
-        appBar: const HomeAppBar(title: Strings.kHomeHydration),
+        appBar: HomeAppBar(
+          title: Strings.kHomeHydration,
+          rightIconOnTap: () {
+            Navigator.pushNamed(context, '/alarm');
+          },
+        ),
         resizeToAvoidBottomInset: false,
         backgroundColor: currentTheme.scaffoldBackgroundColor,
         body: const Center(child: TodayView()),

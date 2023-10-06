@@ -16,10 +16,10 @@ class WaterCircularIndicator extends ConsumerStatefulWidget {
   }) : super(key: key);
 
   @override
-  ConsumerState createState() => _WaterCircularIndicatorState();
+  ConsumerState createState() => WaterCircularIndicatorState();
 }
 
-class _WaterCircularIndicatorState
+class WaterCircularIndicatorState
     extends ConsumerState<WaterCircularIndicator> {
   final dataBox = getIt.get<IHiveManager>();
   final WaterIntakeRepository waterIntakeRepository = WaterIntakeRepository();

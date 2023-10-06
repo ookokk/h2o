@@ -40,11 +40,11 @@ class Routes {
     thirdTab: (context) => const ThirdTabView(),
     fourthTab: (context) => const FourthTabView(),
     fifthTab: (context) => const FifthTabView(),
+    almostDone: (context) => const AlmostDoneView(),
     home: (context) => const HomeView(),
     water: (context) => const TodayView(),
     profile: (context) => const ProfileView(),
     register: (context) => RegisterView(),
-    almostDone: (context) => const AlmostDoneView(),
     alarm: (context) => const AlarmView(),
   };
 }
