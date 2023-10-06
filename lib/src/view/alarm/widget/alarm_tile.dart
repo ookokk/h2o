@@ -43,12 +43,13 @@ class AlarmTile extends ConsumerWidget {
             children: [
               Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: currentTheme.textTheme.displayLarge,
               ),
-              const Icon(Icons.keyboard_arrow_right_rounded, size: 35),
+              Icon(
+                Icons.keyboard_arrow_right_rounded,
+                size: 35,
+                color: currentTheme.indicatorColor,
+              ),
             ],
           ),
         ),

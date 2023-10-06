@@ -16,46 +16,39 @@ class FifthTabView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final currentTheme = ref.watch(themeProvider);
     return SafeArea(
-      child: SizedBox(
-        height: DeviceSize.kHeight(context),
+      child: SingleChildScrollView(
         child: Column(
           children: [
-            const Expanded(
-                child: Column(
+            const Column(
               children: [
                 SizedBox(
-                  height: 8,
+                  height: 18,
                 ),
                 CustomPercentIndicator(percent: 1),
                 SizedBox(
-                  height: 24,
+                  height: 38,
                 ),
               ],
-            )),
-            Expanded(
-              flex: 2,
-              child: Text(
-                textAlign: TextAlign.center,
-                Strings.kFifthWhenEndDay,
-                style: currentTheme.textTheme.bodySmall
-                    ?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              Strings.kFifthWhenEndDay,
+              style: currentTheme.textTheme.bodySmall
+                  ?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 38,
+            ),
+            const BasicNoteContainer(
+              imagePath: 'assets/images/sleep.svg',
+              text: Strings.kFifthDrinkingWater,
+            ),
+            const SizedBox(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [CustomBedTimePicker()],
               ),
             ),
-            const Expanded(
-              flex: 2,
-              child: BasicNoteContainer(
-                imagePath: 'assets/images/sleep.svg',
-                text: Strings.kFifthDrinkingWater,
-              ),
-            ),
-            const Expanded(
-                flex: 6,
-                child: SizedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [CustomBedTimePicker()],
-                  ),
-                )),
           ],
         ),
       ),

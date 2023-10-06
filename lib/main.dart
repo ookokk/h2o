@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/init/cache/locator.dart';
-import 'package:h2o_flutter/src/view/splash/view/splash_view.dart';
 import 'src/core/const/routes.dart';
 import 'src/core/init/theme/theme_provider.dart';
+import 'src/view/register/view/register_view.dart';
 
 void main() {
   initLocator();
@@ -20,7 +20,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routes: Routes.routes,
       theme: currentTheme,
-      home: const SplashView(),
+      home: RegisterView(),
     );
   }
 }

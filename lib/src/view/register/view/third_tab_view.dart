@@ -17,73 +17,65 @@ class ThirdTabView extends ConsumerWidget {
     final currentTheme = ref.watch(themeProvider);
     return SafeArea(
       child: SingleChildScrollView(
-        child: SizedBox(
-          height: DeviceSize.kHeight(context),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 8,
-              ),
-              const CustomPercentIndicator(percent: 0.6),
-              const SizedBox(
-                height: 14,
-              ),
-              Expanded(
-                  flex: 1,
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    Strings.kThirdHowOftenExercise,
-                    style: currentTheme.textTheme.bodySmall
-                        ?.copyWith(fontWeight: FontWeight.bold),
-                  )),
-              const Expanded(
-                flex: 4,
-                child: BasicNoteContainer(
-                    imagePath: 'assets/images/dumbell.svg',
-                    text: Strings.kThirdPeopleWho),
-              ),
-              Expanded(
-                flex: 14,
-                child: SizedBox(
-                  height: DeviceSize.kHeight(context) * 0.45,
-                  child: Column(
-                    children: [
-                      ExerciseContainer(
-                        index: 0,
-                        key: UniqueKey(),
-                        imagePath: "assets/images/rare.svg",
-                        title: Strings.kThirdRarely,
-                        subTitle: Strings.kThirdFew,
-                      ),
-                      const SizedBox(
-                        height: 14,
-                      ),
-                      ExerciseContainer(
-                        index: 1,
-                        key: UniqueKey(),
-                        imagePath: "assets/images/often.svg",
-                        title: Strings.kThirdJustSometimes,
-                        subTitle: Strings.kThird2_3,
-                      ),
-                      const SizedBox(
-                        height: 14,
-                      ),
-                      ExerciseContainer(
-                        index: 2,
-                        key: UniqueKey(),
-                        imagePath: "assets/images/hard.svg",
-                        title: Strings.kThirdItsPart,
-                        subTitle: Strings.kThirdOver,
-                      ),
-                      const SizedBox(
-                        height: 14,
-                      )
-                    ],
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 18,
+            ),
+            const CustomPercentIndicator(percent: 0.6),
+            const SizedBox(
+              height: 38,
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              Strings.kThirdHowOftenExercise,
+              style: currentTheme.textTheme.bodySmall
+                  ?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(
+              height: 38,
+            ),
+            const BasicNoteContainer(
+                imagePath: 'assets/images/dumbell.svg',
+                text: Strings.kThirdPeopleWho),
+            const SizedBox(
+              height: 38,
+            ),
+            SizedBox(
+              height: DeviceSize.kHeight(context) * 0.8,
+              child: Column(
+                children: [
+                  ExerciseContainer(
+                    index: 0,
+                    key: UniqueKey(),
+                    imagePath: "assets/images/rare.svg",
+                    title: Strings.kThirdRarely,
+                    subTitle: Strings.kThirdFew,
                   ),
-                ),
+                  const SizedBox(
+                    height: 34,
+                  ),
+                  ExerciseContainer(
+                    index: 1,
+                    key: UniqueKey(),
+                    imagePath: "assets/images/often.svg",
+                    title: Strings.kThirdJustSometimes,
+                    subTitle: Strings.kThird2_3,
+                  ),
+                  const SizedBox(
+                    height: 34,
+                  ),
+                  ExerciseContainer(
+                    index: 2,
+                    key: UniqueKey(),
+                    imagePath: "assets/images/hard.svg",
+                    title: Strings.kThirdItsPart,
+                    subTitle: Strings.kThirdOver,
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
