@@ -1,10 +1,10 @@
+/*
 import 'dart:async';
 import 'package:alarm/alarm.dart';
 import 'package:flutter/material.dart';
 import 'package:h2o_flutter/src/view/alarm/view/ring_view.dart';
 import 'package:h2o_flutter/src/view/alarm/widget/alarm_tile.dart';
 import 'package:h2o_flutter/src/view/alarm/widget/shortcut_button.dart';
-
 import 'edit_alarm_view.dart';
 
 class AlarmHomeView extends StatefulWidget {
@@ -114,3 +114,4 @@ class _AlarmHomeViewState extends State<AlarmHomeView> {
     );
   }
 }
+*/

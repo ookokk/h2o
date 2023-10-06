@@ -1,3 +1,4 @@
+/*
 import 'package:alarm/alarm.dart';
 import 'package:flutter/material.dart';
 
@@ -74,3 +75,4 @@ class _ShortcutButtonState extends State<ShortcutButton> {
     );
   }
 }
+*/
