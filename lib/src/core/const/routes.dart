@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:h2o_flutter/src/view/alarm/view/alarm_view.dart';
 import 'package:h2o_flutter/src/view/home/view/home_view.dart';
 import 'package:h2o_flutter/src/view/profile/view/profile_view.dart';
 import 'package:h2o_flutter/src/view/register/view/almost_done_view.dart';
@@ -44,5 +45,6 @@ class Routes {
     profile: (context) => const ProfileView(),
     register: (context) => RegisterView(),
     almostDone: (context) => const AlmostDoneView(),
+    alarm: (context) => const AlarmView(),
   };
 }

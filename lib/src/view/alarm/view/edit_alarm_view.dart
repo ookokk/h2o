@@ -1,120 +1,20 @@
-/*
 import 'package:alarm/alarm.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/core/const/strings.dart';
+import 'package:h2o_flutter/src/view/alarm/viewmodel/iedit_alarm_state.dart';
 
-class EditAlarmView extends StatefulWidget {
+class EditAlarmView extends ConsumerStatefulWidget {
   final AlarmSettings? alarmSettings;
 
   const EditAlarmView({Key? key, this.alarmSettings}) : super(key: key);
 
   @override
-  State<EditAlarmView> createState() => _EditAlarmViewState();
+  ConsumerState<EditAlarmView> createState() => _EditAlarmViewState();
 }
 
-class _EditAlarmViewState extends State<EditAlarmView> {
-  bool loading = false;
-
-  late bool creating;
-  late DateTime selectedDateTime;
-  late bool loopAudio;
-  late bool vibrate;
-  late bool volumeMax;
-  late bool showNotification;
-  late String assetAudio;
-
-  @override
-  void initState() {
-    super.initState();
-    creating = widget.alarmSettings == null;
-
-    if (creating) {
-      selectedDateTime = DateTime.now().add(const Duration(minutes: 1));
-      selectedDateTime = selectedDateTime.copyWith(second: 0, millisecond: 0);
-      loopAudio = true;
-      vibrate = true;
-      volumeMax = false;
-      showNotification = true;
-      assetAudio = 'assets/marimba.mp3';
-    } else {
-      selectedDateTime = widget.alarmSettings!.dateTime;
-      loopAudio = widget.alarmSettings!.loopAudio;
-      vibrate = widget.alarmSettings!.vibrate;
-      volumeMax = widget.alarmSettings!.volumeMax;
-      showNotification = widget.alarmSettings!.notificationTitle != null &&
-          widget.alarmSettings!.notificationTitle!.isNotEmpty &&
-          widget.alarmSettings!.notificationBody != null &&
-          widget.alarmSettings!.notificationBody!.isNotEmpty;
-      assetAudio = widget.alarmSettings!.assetAudioPath;
-    }
-  }
-
-  String getDay() {
-    final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
-    final difference = selectedDateTime.difference(today).inDays;
-
-    if (difference == 0) {
-      return 'Today';
-    } else if (difference == 1) {
-      return 'Tomorrow';
-    } else if (difference == 2) {
-      return 'After tomorrow';
-    } else {
-      return 'In $difference days';
-    }
-  }
-
-  Future<void> pickTime() async {
-    final res = await showTimePicker(
-      initialTime: TimeOfDay.fromDateTime(selectedDateTime),
-      context: context,
-    );
-
-    if (res != null) {
-      setState(() {
-        selectedDateTime = selectedDateTime.copyWith(
-          hour: res.hour,
-          minute: res.minute,
-        );
-        if (selectedDateTime.isBefore(DateTime.now())) {
-          selectedDateTime = selectedDateTime.add(const Duration(days: 1));
-        }
-      });
-    }
-  }
-
-  AlarmSettings buildAlarmSettings() {
-    final id = creating
-        ? DateTime.now().millisecondsSinceEpoch % 10000
-        : widget.alarmSettings!.id;
-
-    final alarmSettings = AlarmSettings(
-      id: id,
-      dateTime: selectedDateTime,
-      loopAudio: loopAudio,
-      vibrate: vibrate,
-      volumeMax: volumeMax,
-      notificationTitle: showNotification ? 'Alarm example' : null,
-      notificationBody: showNotification ? 'Your alarm ($id) is ringing' : null,
-      assetAudioPath: assetAudio,
-    );
-    return alarmSettings;
-  }
-
-  void saveAlarm() {
-    setState(() => loading = true);
-    Alarm.set(alarmSettings: buildAlarmSettings()).then((res) {
-      if (res) Navigator.pop(context, true);
-    });
-    setState(() => loading = false);
-  }
-
-  void deleteAlarm() {
-    Alarm.stop(widget.alarmSettings!.id).then((res) {
-      if (res) Navigator.pop(context, true);
-    });
-  }
-
+class _EditAlarmViewState extends ConsumerState<EditAlarmView>
+    with IEditAlarmState {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -128,7 +28,7 @@ class _EditAlarmViewState extends State<EditAlarmView> {
               TextButton(
                 onPressed: () => Navigator.pop(context, false),
                 child: Text(
-                  "Cancel",
+                  Strings.kAlarmCancel,
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -140,7 +40,7 @@ class _EditAlarmViewState extends State<EditAlarmView> {
                 child: loading
                     ? const CircularProgressIndicator()
                     : Text(
-                        "Save",
+                        Strings.kAlarmSave,
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge!
@@ -174,7 +74,7 @@ class _EditAlarmViewState extends State<EditAlarmView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Loop alarm audio',
+                Strings.kAlarmLoopAudio,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               Switch(
@@ -187,7 +87,7 @@ class _EditAlarmViewState extends State<EditAlarmView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Vibrate',
+                Strings.kAlarmVibrate,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               Switch(
@@ -200,7 +100,7 @@ class _EditAlarmViewState extends State<EditAlarmView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'System volume max',
+                Strings.kAlarmSystemVolume,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               Switch(
@@ -213,7 +113,7 @@ class _EditAlarmViewState extends State<EditAlarmView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Show notification',
+                Strings.kAlarmShowNotification,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               Switch(
@@ -226,31 +126,31 @@ class _EditAlarmViewState extends State<EditAlarmView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Sound',
+                Strings.kAlarmSound,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               DropdownButton(
                 value: assetAudio,
                 items: const [
                   DropdownMenuItem<String>(
-                    value: 'assets/marimba.mp3',
-                    child: Text('Marimba'),
+                    value: 'assets/sounds/water.mp3',
+                    child: Text(Strings.kAlarmWater),
                   ),
                   DropdownMenuItem<String>(
                     value: 'assets/nokia.mp3',
-                    child: Text('Nokia'),
+                    child: Text(Strings.kAlarmNokia),
                   ),
                   DropdownMenuItem<String>(
                     value: 'assets/mozart.mp3',
-                    child: Text('Mozart'),
+                    child: Text(Strings.kAlarmMozart),
                   ),
                   DropdownMenuItem<String>(
                     value: 'assets/star_wars.mp3',
-                    child: Text('Star Wars'),
+                    child: Text(Strings.kAlarmStarWars),
                   ),
                   DropdownMenuItem<String>(
                     value: 'assets/one_piece.mp3',
-                    child: Text('One Piece'),
+                    child: Text(Strings.kAlarmOnePiece),
                   ),
                 ],
                 onChanged: (value) => setState(() => assetAudio = value!),
@@ -261,7 +161,7 @@ class _EditAlarmViewState extends State<EditAlarmView> {
             TextButton(
               onPressed: deleteAlarm,
               child: Text(
-                'Delete Alarm',
+                Strings.kAlarmDeleteAlarm,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
@@ -274,4 +174,3 @@ class _EditAlarmViewState extends State<EditAlarmView> {
     );
   }
 }
-*/

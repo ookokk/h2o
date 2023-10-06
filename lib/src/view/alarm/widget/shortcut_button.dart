@@ -1,6 +1,6 @@
-/*
 import 'package:alarm/alarm.dart';
 import 'package:flutter/material.dart';
+import 'package:h2o_flutter/src/core/const/strings.dart';
 
 class ShortcutButton extends StatefulWidget {
   final void Function() refreshAlarms;
@@ -29,7 +29,7 @@ class _ShortcutButtonState extends State<ShortcutButton> {
     final alarmSettings = AlarmSettings(
       id: DateTime.now().millisecondsSinceEpoch % 10000,
       dateTime: dateTime,
-      assetAudioPath: 'assets/marimba.mp3',
+      assetAudioPath: 'assets/sounds/water.mp3',
       volumeMax: true,
     );
 
@@ -50,7 +50,8 @@ class _ShortcutButtonState extends State<ShortcutButton> {
             onPressed: () => onPressButton(0),
             backgroundColor: Colors.red,
             heroTag: null,
-            child: const Text("RING NOW", textAlign: TextAlign.center),
+            child:
+                const Text(Strings.kAlarmRingNow, textAlign: TextAlign.center),
           ),
         ),
         if (showMenu)
@@ -75,4 +76,3 @@ class _ShortcutButtonState extends State<ShortcutButton> {
     );
   }
 }
-*/

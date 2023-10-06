@@ -1,6 +1,6 @@
-/*
 import 'package:alarm/alarm.dart';
 import 'package:flutter/material.dart';
+import 'package:h2o_flutter/src/core/const/strings.dart';
 
 class RingView extends StatelessWidget {
   final AlarmSettings alarmSettings;
@@ -15,8 +15,7 @@ class RingView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              "You alarm (${alarmSettings.id}) is ringing...",
-              style: Theme.of(context).textTheme.titleLarge,
+              "${Strings.kAlarmYourAlarm} ${alarmSettings.id} ${Strings.kAlarmIsRinging}",
             ),
             const Text("🔔", style: TextStyle(fontSize: 50)),
             Row(
@@ -40,7 +39,7 @@ class RingView extends StatelessWidget {
                     ).then((_) => Navigator.pop(context));
                   },
                   child: Text(
-                    "Snooze",
+                    Strings.kAlarmSnooze,
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
@@ -50,7 +49,7 @@ class RingView extends StatelessWidget {
                         .then((_) => Navigator.pop(context));
                   },
                   child: Text(
-                    "Stop",
+                    Strings.kAlarmStop,
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
@@ -62,4 +61,3 @@ class RingView extends StatelessWidget {
     );
   }
 }
-*/

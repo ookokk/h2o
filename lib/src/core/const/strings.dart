@@ -44,7 +44,30 @@ class Strings {
   static const String kHomeToday = "Today's Record";
   static const String kHome300ml = "300 mL";
   static const String kHomeMl = "mL";
-  //home
+  //alarm
+  static const String kAlarmNoAlarm = "No alarms set";
+  static const String kAlarmToday = "Today";
+  static const String kAlarmTomorrow = "Tomorrow";
+  static const String kAlarmAfterTomorrow = "After tomorrow";
+  static const String kAlarmNotificationTitle = "Your Water Reminder";
+  static const String kAlarmCancel = "Cancel";
+  static const String kAlarmSave = "Save";
+  static const String kAlarmLoopAudio = "Loop alarm audio";
+  static const String kAlarmVibrate = "Vibrate";
+  static const String kAlarmSystemVolume = "System volume max";
+  static const String kAlarmShowNotification = "Show notification";
+  static const String kAlarmSound = "Sound";
+  static const String kAlarmWater = "Water";
+  static const String kAlarmNokia = "Nokia";
+  static const String kAlarmMozart = "Mozart";
+  static const String kAlarmStarWars = "Star Wars";
+  static const String kAlarmOnePiece = "One Piece";
+  static const String kAlarmDeleteAlarm = "Delete Alarm";
+  static const String kAlarmYourAlarm = "Your alarm";
+  static const String kAlarmIsRinging = "is ringing!";
+  static const String kAlarmSnooze = "Snooze";
+  static const String kAlarmStop = "Stop";
+  static const String kAlarmRingNow = "RING NOW";
 
   //profile
 }
