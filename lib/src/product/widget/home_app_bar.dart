@@ -34,7 +34,7 @@ class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget {
       backgroundColor: currentTheme.scaffoldBackgroundColor,
       leading: IconButton(
         onPressed: leftIconOnTap ?? () {},
-        icon: Icon(color: currentTheme.indicatorColor, Icons.waves),
+        icon: Icon(color: currentTheme.indicatorColor, Icons.settings),
       ),
     );
   }

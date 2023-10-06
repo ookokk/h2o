@@ -21,12 +21,12 @@ class TodayViewState extends ConsumerState<TodayView> with ITodayState {
       body: const SingleChildScrollView(
         child: Column(
           children: [
-            WaterCircularIndicator(),
+            SizedBox(child: WaterCircularIndicator()),
             SizedBox(
               height: 18,
             ),
             SizedBox(
-              height: 750,
+              height: 450,
               child: HistoryListView(),
             )
           ],

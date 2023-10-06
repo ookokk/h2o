@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:h2o_flutter/src/view/alarm/view/alarm_view.dart';
 import 'package:h2o_flutter/src/view/home/view/home_view.dart';
-import 'package:h2o_flutter/src/view/profile/view/profile_view.dart';
 import 'package:h2o_flutter/src/view/register/view/almost_done_view.dart';
 import 'package:h2o_flutter/src/view/register/view/fifth_tab_view.dart';
 import 'package:h2o_flutter/src/view/register/view/first_tab_view.dart';
@@ -10,6 +9,7 @@ import 'package:h2o_flutter/src/view/register/view/register_view.dart';
 import 'package:h2o_flutter/src/view/register/view/second_tab_view.dart';
 import 'package:h2o_flutter/src/view/register/view/third_tab_view.dart';
 import 'package:h2o_flutter/src/view/get_started/view/get_started_view.dart';
+import 'package:h2o_flutter/src/view/settings/view/settings_view.dart';
 import 'package:h2o_flutter/src/view/splash/view/splash_view.dart';
 import 'package:h2o_flutter/src/view/today/view/today_view.dart';
 
@@ -29,7 +29,7 @@ class Routes {
   static const String home = '/home';
   static const String water = '/water';
   static const String progress = '/progress';
-  static const String profile = '/profile';
+  static const String settings = '/settings';
   static const String alarm = '/alarm';
 
   static final Map<String, WidgetBuilder> routes = {
@@ -43,7 +43,7 @@ class Routes {
     almostDone: (context) => const AlmostDoneView(),
     home: (context) => const HomeView(),
     water: (context) => const TodayView(),
-    profile: (context) => const ProfileView(),
+    settings: (context) => const SettingsView(),
     register: (context) => RegisterView(),
     alarm: (context) => const AlarmView(),
   };

@@ -69,5 +69,6 @@ class Strings {
   static const String kAlarmStop = "Stop";
   static const String kAlarmRingNow = "Ring Now";
 
-  //profile
+  //settings
+  //static const kProfileSettings
 }

@@ -24,6 +24,9 @@ class HomeViewState extends ConsumerState<HomeView> {
           rightIconOnTap: () {
             Navigator.pushNamed(context, '/alarm');
           },
+          leftIconOnTap: () {
+            Navigator.pushNamed(context, '/settings');
+          },
         ),
         resizeToAvoidBottomInset: false,
         backgroundColor: currentTheme.scaffoldBackgroundColor,
