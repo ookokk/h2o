@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
-import 'package:h2o_flutter/src/core/init/cache/locator.dart';
+import 'package:h2o_flutter/src/core/init/cache/init_locator.dart';
 import 'package:h2o_flutter/src/view/settings/view/settings_view.dart';
 
 mixin ISettingsState on ConsumerState<SettingsView> {

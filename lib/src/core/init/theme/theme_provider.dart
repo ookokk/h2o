@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
-import 'package:h2o_flutter/src/core/init/cache/locator.dart';
+import 'package:h2o_flutter/src/core/init/cache/init_locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/custom_text_theme.dart';
 
 final themeProvider =
@@ -11,8 +11,10 @@ final themeProvider =
 final dataBox = getIt.get<IHiveManager>();
 
 class ThemeProvider extends StateNotifier<ThemeData> {
-  ThemeProvider() : super(lightTheme);
-  ThemeData currentTheme = lightTheme;
+  ThemeProvider() : super(lightTheme) {
+    currentTheme = lightTheme;
+  }
+  late ThemeData currentTheme;
 
   bool isDarkTheme() {
     final isDark = dataBox.user.get('isDarkTheme') ?? false;

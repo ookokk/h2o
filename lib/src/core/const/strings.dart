@@ -71,7 +71,13 @@ class Strings {
 
   //settings
   static const kSettingsPersonal = "Personal";
+  static const kSettingsEditPersonal = "Edit Personal Info";
+  static const kSettingsDeletePersonalInfo = "Delete !";
+  static const kSettingsAreYouSure =
+      "Are you sure you want to delete your information?";
   static const kSettingsMore = "More";
+  static const kSettingsNo = "No";
+  static const kSettingsYes = "Yes";
   static const kSettingsGender = "Gender";
   static const kSettingsWeight = "Weight";
   static const kSettingsExerciseFrequency = "Exercise Frequency";

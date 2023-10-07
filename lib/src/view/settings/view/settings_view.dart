@@ -4,6 +4,7 @@ import 'package:h2o_flutter/src/core/const/device_size.dart';
 import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/view/settings/viewmodel/isettings_state.dart';
+import 'package:h2o_flutter/src/view/settings/widget/edit_personal_info_show_dialog.dart';
 import 'package:h2o_flutter/src/view/settings/widget/theme_switch.dart';
 import 'package:h2o_flutter/src/view/settings/widget/language_bottom_sheet.dart';
 import 'package:h2o_flutter/src/view/settings/widget/settings_category_row.dart';
@@ -77,6 +78,15 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                             '${getPersonalInformation(6)} : ${getPersonalInformation(7)}',
                             style: currentTheme.textTheme.headlineLarge,
                           )),
+                      SettingsListTile(
+                          onTap: () {
+                            editPersonalInfoShowDialog(context, ref);
+                          },
+                          text: Strings.kSettingsEditPersonal,
+                          trailingChild: Icon(
+                            Icons.arrow_forward_ios,
+                            color: currentTheme.indicatorColor,
+                          )),
                       const SettingsCategoryRow(
                           headerText: Strings.kSettingsMore,
                           iconData: Icons.dashboard_customize_outlined),
@@ -89,23 +99,13 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                                 });
                           },
                           text: Strings.kSettingsLanguage,
-                          trailingChild: const Icon(
+                          trailingChild: Icon(
                             Icons.arrow_forward_ios,
-                            color: Colors.black,
+                            color: currentTheme.indicatorColor,
                           )),
                       const SettingsListTile(
                           text: Strings.kSettingsDarkTheme,
                           trailingChild: ThemeSwitch()),
-                      TextButton(
-                          onPressed: () {
-                            print(dataBox.user.get('isDarkTheme'));
-                          },
-                          child: Text('laskdşlas')),
-                      TextButton(
-                          onPressed: () {
-                            print(currentTheme);
-                          },
-                          child: Text('s'))
                     ]),
                   ),
                 ],

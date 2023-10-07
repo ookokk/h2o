@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
-import 'package:h2o_flutter/src/core/init/cache/locator.dart';
+import 'package:h2o_flutter/src/core/init/cache/init_locator.dart';
 import 'package:h2o_flutter/src/product/model/water_intake_model.dart';
 import 'dart:math';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
-import 'package:h2o_flutter/src/core/init/cache/locator.dart';
+import 'package:h2o_flutter/src/core/init/cache/init_locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/product/calculate/calculate_daily_water_intake.dart';
 import 'package:h2o_flutter/src/view/get_started/widget/get_started_button.dart';

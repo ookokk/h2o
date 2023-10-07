@@ -81,7 +81,7 @@ class _ShortcutButtonState extends ConsumerState<ShortcutButton> {
             child: Text(
               Strings.kAlarmRingNow,
               textAlign: TextAlign.center,
-              style: currentTheme.textTheme.titleLarge,
+              style: currentTheme.textTheme.displayMedium,
             ),
           ),
         ),

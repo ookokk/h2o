@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/init/cache/locator.dart';
+import 'package:h2o_flutter/src/core/init/cache/init_locator.dart';
 import 'package:h2o_flutter/src/view/splash/view/splash_view.dart';
 import 'src/core/const/routes.dart';
 import 'src/core/init/theme/theme_provider.dart';
 
 void main() {
   initLocator();
-
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -21,6 +20,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routes: Routes.routes,
       theme: currentTheme,
+      darkTheme: ThemeProvider.darkTheme,
       home: const SplashView(),
     );
   }
