@@ -9,7 +9,6 @@ class CustomSwitch extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isChecked = ref.watch(isCheckedProvider);
-
     return Transform.scale(
       scale: 1.5,
       child: Switch(

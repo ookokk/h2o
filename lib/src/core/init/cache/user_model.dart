@@ -43,6 +43,9 @@ class UserModel extends HiveObject {
   @HiveField(11)
   double? updatingWaterNeed;
 
+  @HiveField(12)
+  bool? isDarkTheme = false;
+
   UserModel(
       {this.id,
       this.gender,
@@ -55,5 +58,6 @@ class UserModel extends HiveObject {
       this.trainingHardness,
       this.isRegistered,
       this.updatingWaterNeed,
+      this.isDarkTheme,
       this.age});
 }

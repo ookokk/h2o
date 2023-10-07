@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
+import 'package:h2o_flutter/src/core/init/cache/locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/custom_text_theme.dart';
 
 final themeProvider =
     StateNotifierProvider.autoDispose<ThemeProvider, ThemeData>((ref) {
   return ThemeProvider();
 });
+final dataBox = getIt.get<IHiveManager>();
 
 class ThemeProvider extends StateNotifier<ThemeData> {
   ThemeProvider() : super(lightTheme);
   ThemeData currentTheme = lightTheme;
+
   bool isDarkTheme() {
-    return state == darkTheme;
+    final isDark = dataBox.user.get('isDarkTheme') ?? false;
+    return isDark;
   }
 
   void toggleTheme() {
-    currentTheme = (currentTheme == lightTheme) ? darkTheme : lightTheme;
+    final isDark = isDarkTheme();
+    currentTheme = isDark ? lightTheme : darkTheme;
     state = currentTheme;
+    dataBox.user.put('isDarkTheme', !isDark);
   }
 
   ThemeData get getCurrentTheme => currentTheme;

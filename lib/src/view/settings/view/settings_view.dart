@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/const/device_size.dart';
 import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
-import 'package:h2o_flutter/src/view/register/widget/custom_switch.dart';
 import 'package:h2o_flutter/src/view/settings/viewmodel/isettings_state.dart';
+import 'package:h2o_flutter/src/view/settings/widget/theme_switch.dart';
 import 'package:h2o_flutter/src/view/settings/widget/language_bottom_sheet.dart';
 import 'package:h2o_flutter/src/view/settings/widget/settings_category_row.dart';
 import 'package:h2o_flutter/src/view/settings/widget/settings_list_tile.dart';
@@ -95,7 +95,17 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                           )),
                       const SettingsListTile(
                           text: Strings.kSettingsDarkTheme,
-                          trailingChild: CustomSwitch()),
+                          trailingChild: ThemeSwitch()),
+                      TextButton(
+                          onPressed: () {
+                            print(dataBox.user.get('isDarkTheme'));
+                          },
+                          child: Text('laskdşlas')),
+                      TextButton(
+                          onPressed: () {
+                            print(currentTheme);
+                          },
+                          child: Text('s'))
                     ]),
                   ),
                 ],

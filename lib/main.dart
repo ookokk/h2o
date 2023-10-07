@@ -7,6 +7,7 @@ import 'src/core/init/theme/theme_provider.dart';
 
 void main() {
   initLocator();
+
   runApp(const ProviderScope(child: MyApp()));
 }
 

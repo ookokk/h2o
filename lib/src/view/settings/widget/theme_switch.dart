@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 
-class CustomSwitch extends ConsumerStatefulWidget {
-  const CustomSwitch({
+class ThemeSwitch extends ConsumerStatefulWidget {
+  const ThemeSwitch({
     Key? key,
   }) : super(key: key);
 
@@ -11,7 +11,7 @@ class CustomSwitch extends ConsumerStatefulWidget {
   ConsumerState createState() => _CustomSwitchState();
 }
 
-class _CustomSwitchState extends ConsumerState<CustomSwitch> {
+class _CustomSwitchState extends ConsumerState<ThemeSwitch> {
   bool internalValue = false;
 
   @override
@@ -26,7 +26,7 @@ class _CustomSwitchState extends ConsumerState<CustomSwitch> {
     return GestureDetector(
       onTap: () {
         ref.read(themeProvider.notifier).toggleTheme();
-        internalValue = !internalValue;
+        internalValue = !ref.read(themeProvider.notifier).isDarkTheme();
       },
       child: Container(
         width: 60.0,
