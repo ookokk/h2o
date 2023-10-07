@@ -21,11 +21,11 @@ class HomeViewState extends ConsumerState<HomeView> {
       child: Scaffold(
         appBar: HomeAppBar(
           title: Strings.kHomeHydration,
-          rightIconOnTap: () {
-            Navigator.pushNamed(context, '/alarm');
-          },
           leftIconOnTap: () {
             Navigator.pushNamed(context, '/settings');
+          },
+          rightIconOnTap: () {
+            Navigator.pushNamed(context, '/alarm');
           },
         ),
         resizeToAvoidBottomInset: false,

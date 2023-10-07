@@ -13,7 +13,6 @@ class TodayView extends ConsumerStatefulWidget {
 
 class TodayViewState extends ConsumerState<TodayView> with ITodayState {
   @override
-  @override
   Widget build(BuildContext context) {
     final currentTheme = ref.watch(themeProvider);
     return Scaffold(

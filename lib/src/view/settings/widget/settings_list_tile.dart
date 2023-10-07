@@ -40,7 +40,7 @@ class _SettingsListTileState extends ConsumerState<SettingsListTile> {
           widget.text,
           style: currentTheme.textTheme.headlineLarge,
         ),
-        // trailing: widget.trailingChild,
+        trailing: widget.trailingChild,
         shape: RoundedRectangleBorder(
           side: BorderSide(
               style: BorderStyle.solid,

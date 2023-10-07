@@ -70,5 +70,13 @@ class Strings {
   static const String kAlarmRingNow = "Ring Now";
 
   //settings
-  //static const kProfileSettings
+  static const kSettingsPersonal = "Personal";
+  static const kSettingsMore = "More";
+  static const kSettingsGender = "Gender";
+  static const kSettingsWeight = "Weight";
+  static const kSettingsExerciseFrequency = "Exercise Frequency";
+  static const kSettingsWakeUpTime = "Wake Up Time";
+  static const kSettingsBedTime = "Bed Time";
+  static const kSettingsDarkTheme = "DarkTheme";
+  static const kSettingsLanguage = "Language";
 }

@@ -31,7 +31,8 @@ class _SettingsCategoryRowState extends ConsumerState<SettingsCategoryRow> {
         ),
         Text(
           widget.headerText,
-          style: currentTheme.textTheme.displaySmall,
+          style: currentTheme.textTheme.displaySmall
+              ?.copyWith(fontWeight: FontWeight.bold),
         )
       ],
     );
