@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/view/register/widget/basic_note_container.dart';
 import 'package:h2o_flutter/src/view/register/widget/custom_percent_indicator.dart';
@@ -32,16 +32,16 @@ class FirstTabView extends ConsumerWidget {
             ),
             Text(
               textAlign: TextAlign.center,
-              Strings.kFirstWhatsYourGender,
+              "kFirstWhatsYourGender".tr(),
               style: currentTheme.textTheme.bodySmall
                   ?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 38,
             ),
-            const BasicNoteContainer(
+            BasicNoteContainer(
                 imagePath: 'assets/images/glass_water.svg',
-                text: Strings.kFirstWhatsYourGenderHelp),
+                text: "kFirstWhatsYourGenderHelp".tr()),
             const SizedBox(
               height: 188,
             ),

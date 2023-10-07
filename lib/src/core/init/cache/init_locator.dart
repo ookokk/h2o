@@ -11,7 +11,6 @@ final GetIt getIt = GetIt.instance;
 
 Future<void> initLocator() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
   getIt.registerSingletonAsync<IHiveManager>(() async => HiveManager().init());
   getIt.registerSingletonAsync<ISharedPreferencesManager>(
       () async => SharedPreferencesManager().init());
@@ -20,4 +19,5 @@ Future<void> initLocator() async {
   );
   await Alarm.init(showDebugLogs: true);
   await getIt.allReady();
+  await EasyLocalization.ensureInitialized();
 }

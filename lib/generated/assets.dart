@@ -39,14 +39,16 @@ class Assets {
   static const String imagesSleep = 'assets/images/sleep.svg';
   static const String imagesWakeUp = 'assets/images/wake_up.svg';
   static const String imagesWeightTarti = 'assets/images/weight_tarti.svg';
-  static const String langAr = 'assets/lang/ar.json';
-  static const String langDe = 'assets/lang/de.json';
-  static const String langEs = 'assets/lang/es.json';
-  static const String langFr = 'assets/lang/fr.json';
-  static const String langJa = 'assets/lang/ja.json';
-  static const String langNl = 'assets/lang/nl.json';
-  static const String langPt = 'assets/lang/pt.json';
-  static const String langTr = 'assets/lang/tr.json';
-  static const String langZh = 'assets/lang/zh.json';
+  static const String langAr = 'assets/lang/ar-SA.json';
+  static const String langDe = 'assets/lang/de-DE.json';
+  static const String langEn = 'assets/lang/en-US.json';
+  static const String langEs = 'assets/lang/es-ES.json';
+  static const String langFr = 'assets/lang/fr-FR.json';
+  static const String langJa = 'assets/lang/ja-JP.json';
+  static const String langNl = 'assets/lang/nl-NL.json';
+  static const String langPt = 'assets/lang/pt-BR.json';
+  static const String langRu = 'assets/lang/ru-RU.json';
+  static const String langTr = 'assets/lang/tr-TR.json';
+  static const String langZh = 'assets/lang/zh-CN.json';
   static const String soundsWater = 'assets/sounds/water.mp3';
 }

@@ -23,7 +23,7 @@ class HistoryListView extends ConsumerWidget {
           .getWaterIntakeRecords(dataBox.user.get('userId')),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return Text('Hata: ${snapshot.error}');
+          return Text('Error: ${snapshot.error}');
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Icon(

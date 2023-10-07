@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
 import 'package:h2o_flutter/src/core/init/cache/init_locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
@@ -42,7 +42,7 @@ class WaterCircularIndicatorState
           circularStrokeCap: CircularStrokeCap.round,
           backgroundColor: currentTheme.canvasColor,
           center: Text(
-            "${updatingWaterNeedValue.toStringAsFixed(2)} ${Strings.kHomeMl}",
+            "${updatingWaterNeedValue.toStringAsFixed(2)} ${"kHomeMl".tr()}",
             style: currentTheme.textTheme.displaySmall,
           ),
         ),
@@ -59,7 +59,7 @@ class WaterCircularIndicatorState
                       recordId: 1, dateTime: DateTime.now(), amount: 300));
             });
           },
-          text: Strings.kHome300ml,
+          text: "kHome300ml".tr(),
         ),
       ],
     );

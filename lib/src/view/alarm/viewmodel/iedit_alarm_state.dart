@@ -1,7 +1,7 @@
 import 'package:alarm/alarm.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/view/alarm/view/edit_alarm_view.dart';
 
 mixin IEditAlarmState on ConsumerState<EditAlarmView> {
@@ -46,11 +46,11 @@ mixin IEditAlarmState on ConsumerState<EditAlarmView> {
     final difference = selectedDateTime.difference(today).inDays;
 
     if (difference == 0) {
-      return Strings.kAlarmToday;
+      return "kAlarmToday".tr();
     } else if (difference == 1) {
-      return Strings.kAlarmTomorrow;
+      return "kAlarmTomorrow".tr();
     } else if (difference == 2) {
-      return Strings.kAlarmAfterTomorrow;
+      return "kAlarmAfterTomorrow".tr();
     } else {
       return 'In $difference days';
     }
@@ -87,7 +87,7 @@ mixin IEditAlarmState on ConsumerState<EditAlarmView> {
       vibrate: vibrate,
       volumeMax: volumeMax,
       notificationTitle:
-          showNotification ? Strings.kAlarmNotificationTitle : null,
+          showNotification ? "kAlarmNotificationTitle".tr() : null,
       notificationBody: showNotification ? 'Your alarm ($id) is ringing' : null,
       assetAudioPath: assetAudio,
     );

@@ -25,48 +25,68 @@ class LanguageBottomSheet extends ConsumerWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            ListTile(
-              leading: Icon(
-                Icons.language,
-                color: currentTheme.indicatorColor,
-              ),
-              title: Text(
-                "Turkish",
-                style: currentTheme.textTheme.headlineLarge,
-              ),
-              onTap: () {
-                context.setLocale(const Locale('tr', 'TR'));
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.language,
-                color: currentTheme.indicatorColor,
-              ),
-              title: Text(
-                'English',
-                style: currentTheme.textTheme.headlineLarge,
-              ),
-              onTap: () {
-                context.setLocale(const Locale('en', 'US'));
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.language, color: currentTheme.indicatorColor),
-              title: Text(
-                'Dutch',
-                style: currentTheme.textTheme.headlineLarge,
-              ),
-              onTap: () {
-                context.setLocale(const Locale('nl', 'NL'));
-                Navigator.pop(context);
-              },
-            ),
+            buildListTile(currentTheme, context, "English", () {
+              context.setLocale(const Locale('en', 'US'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "Turkish", () {
+              context.setLocale(const Locale('tr', 'TR'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "Nederland", () {
+              context.setLocale(const Locale('nl', 'NL'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "Arabic", () {
+              context.setLocale(const Locale('ar', 'SA'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "German", () {
+              context.setLocale(const Locale('de', 'DE'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "Spanish", () {
+              context.setLocale(const Locale('es', 'ES'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "French", () {
+              context.setLocale(const Locale('fr', 'FR'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "Japanese", () {
+              context.setLocale(const Locale('ja', 'JP'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "Portuguese", () {
+              context.setLocale(const Locale('pt', 'BR'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "Chinese", () {
+              context.setLocale(const Locale('zh', 'CN'));
+              Navigator.pop(context);
+            }),
+            buildListTile(currentTheme, context, "Russian", () {
+              context.setLocale(const Locale('ru', 'RU'));
+              Navigator.pop(context);
+            }),
           ],
         ),
       ),
+    );
+  }
+
+  ListTile buildListTile(ThemeData currentTheme, BuildContext context,
+      String listTileText, VoidCallback listTileOnTap) {
+    return ListTile(
+      leading: Icon(
+        Icons.language,
+        color: currentTheme.indicatorColor,
+      ),
+      title: Text(
+        listTileText,
+        style: currentTheme.textTheme.headlineLarge,
+      ),
+      onTap: listTileOnTap,
     );
   }
 }

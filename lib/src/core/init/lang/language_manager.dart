@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 class LanguageManager {
   LanguageManager._init();
-
   static LanguageManager? _instance;
-
   static LanguageManager get instance {
     _instance ??= LanguageManager._init();
     return _instance!;
@@ -18,6 +16,7 @@ class LanguageManager {
   final Locale spanishLocale = const Locale('es', 'ES');
   final Locale frenchLocale = const Locale('fr', 'FR');
   final Locale japaneseLocale = const Locale('ja', 'JP');
+  final Locale portugueseLocale = const Locale('pt', 'BR');
   final Locale chineseLocale = const Locale('zh', 'CN');
   final Locale russianLocale = const Locale('ru', 'RU');
 
@@ -34,6 +33,7 @@ class LanguageManager {
         japaneseLocale,
         chineseLocale,
         russianLocale,
+        portugueseLocale
       ];
 
   Locale get currentLocale => _currentLocale;

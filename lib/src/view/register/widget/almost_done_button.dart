@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/cache/hive_manager.dart';
 import 'package:h2o_flutter/src/core/init/cache/init_locator.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
@@ -55,7 +55,7 @@ class AlmostDoneButton extends ConsumerWidget {
 
           Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
         },
-        text: Strings.kAlmostComplete,
+        text: "kAlmostComplete".tr(),
         color: currentTheme.canvasColor,
         borderColor: currentTheme.indicatorColor);
   }

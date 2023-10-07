@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 
 Future<dynamic> editPersonalInfoShowDialog(
@@ -12,14 +12,14 @@ Future<dynamic> editPersonalInfoShowDialog(
       return AlertDialog(
         backgroundColor: currentTheme.scaffoldBackgroundColor,
         title: Text(
-          Strings.kSettingsDeletePersonalInfo,
+          "kSettingsDeletePersonalInfo".tr(),
           style: currentTheme.textTheme.bodySmall,
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text(
-              Strings.kSettingsAreYouSure,
+              "kSettingsAreYouSure".tr(),
               style: currentTheme.textTheme.headlineLarge,
             ),
           ],
@@ -30,7 +30,7 @@ Future<dynamic> editPersonalInfoShowDialog(
               Navigator.of(context).pop();
             },
             child: Text(
-              Strings.kSettingsNo,
+              "kSettingsNo".tr(),
               style: currentTheme.textTheme.headlineMedium,
             ),
           ),
@@ -42,7 +42,7 @@ Future<dynamic> editPersonalInfoShowDialog(
                     context, '/register', (route) => false);
               },
               child: Text(
-                Strings.kSettingsYes,
+                "kSettingsYes".tr(),
                 style: currentTheme.textTheme.headlineMedium,
               ),
             ),

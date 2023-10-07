@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/view/register/view_model/fourth_tab_view_model.dart';
 
@@ -30,7 +30,7 @@ class CustomWakeUpTimePicker extends ConsumerWidget {
       child: Text(
         wakeUpTime != null
             ? '${wakeUpTime.hour}:${wakeUpTime.minute.toString().padLeft(2, '0')}'
-            : Strings.kFourthSelectTime,
+            : "kFourthSelectTime".tr(),
         style: currentTheme.textTheme.bodyLarge
             ?.copyWith(fontSize: 60, fontWeight: FontWeight.w500),
       ),

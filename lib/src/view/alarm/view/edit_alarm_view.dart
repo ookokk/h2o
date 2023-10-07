@@ -1,7 +1,7 @@
 import 'package:alarm/alarm.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/view/alarm/viewmodel/iedit_alarm_state.dart';
 
@@ -31,7 +31,7 @@ class _EditAlarmViewState extends ConsumerState<EditAlarmView>
                 TextButton(
                   onPressed: () => Navigator.pop(context, false),
                   child: Text(
-                    Strings.kAlarmCancel,
+                    "kAlarmCancel".tr(),
                     style: currentTheme.textTheme.displaySmall
                         ?.copyWith(color: Colors.blue),
                   ),
@@ -41,7 +41,7 @@ class _EditAlarmViewState extends ConsumerState<EditAlarmView>
                   child: loading
                       ? const CircularProgressIndicator()
                       : Text(
-                          Strings.kAlarmSave,
+                          "kAlarmSave".tr(),
                           style: currentTheme.textTheme.displaySmall
                               ?.copyWith(color: Colors.blue),
                         ),
@@ -77,7 +77,7 @@ class _EditAlarmViewState extends ConsumerState<EditAlarmView>
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(Strings.kAlarmLoopAudio,
+                Text("kAlarmLoopAudio".tr(),
                     style: currentTheme.textTheme.headlineLarge),
                 Switch(
                   value: loopAudio,
@@ -91,7 +91,7 @@ class _EditAlarmViewState extends ConsumerState<EditAlarmView>
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(Strings.kAlarmVibrate,
+                Text("kAlarmVibrate".tr(),
                     style: currentTheme.textTheme.headlineLarge),
                 Switch(
                   value: vibrate,
@@ -105,7 +105,7 @@ class _EditAlarmViewState extends ConsumerState<EditAlarmView>
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(Strings.kAlarmSystemVolume,
+                Text("kAlarmSystemVolume".tr(),
                     style: currentTheme.textTheme.headlineLarge),
                 Switch(
                   value: volumeMax,
@@ -119,7 +119,7 @@ class _EditAlarmViewState extends ConsumerState<EditAlarmView>
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(Strings.kAlarmShowNotification,
+                Text("kAlarmShowNotification".tr(),
                     style: currentTheme.textTheme.headlineLarge),
                 Switch(
                   value: showNotification,
@@ -134,34 +134,34 @@ class _EditAlarmViewState extends ConsumerState<EditAlarmView>
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(Strings.kAlarmSound,
+                Text("kAlarmSound".tr(),
                     style: currentTheme.textTheme.headlineLarge),
                 DropdownButton(
                   value: assetAudio,
                   items: [
                     DropdownMenuItem<String>(
                       value: 'assets/sounds/water.mp3',
-                      child: Text(Strings.kAlarmWater,
+                      child: Text("kAlarmWater".tr(),
                           style: currentTheme.textTheme.headlineMedium),
                     ),
                     DropdownMenuItem<String>(
                       value: 'assets/nokia.mp3',
-                      child: Text(Strings.kAlarmNokia,
+                      child: Text("kAlarmNokia".tr(),
                           style: currentTheme.textTheme.headlineMedium),
                     ),
                     DropdownMenuItem<String>(
                       value: 'assets/mozart.mp3',
-                      child: Text(Strings.kAlarmMozart,
+                      child: Text("kAlarmMozart".tr(),
                           style: currentTheme.textTheme.headlineMedium),
                     ),
                     DropdownMenuItem<String>(
                       value: 'assets/star_wars.mp3',
-                      child: Text(Strings.kAlarmStarWars,
+                      child: Text("kAlarmStarWars".tr(),
                           style: currentTheme.textTheme.headlineMedium),
                     ),
                     DropdownMenuItem<String>(
                       value: 'assets/one_piece.mp3',
-                      child: Text(Strings.kAlarmOnePiece,
+                      child: Text("kAlarmOnePiece".tr(),
                           style: currentTheme.textTheme.headlineMedium),
                     ),
                   ],
@@ -176,7 +176,7 @@ class _EditAlarmViewState extends ConsumerState<EditAlarmView>
               TextButton(
                 onPressed: deleteAlarm,
                 child: Text(
-                  Strings.kAlarmDeleteAlarm,
+                  "kAlarmDeleteAlarm".tr(),
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!

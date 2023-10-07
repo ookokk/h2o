@@ -1,8 +1,8 @@
 import 'package:alarm/alarm.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/const/device_size.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 
 class ShortcutButton extends ConsumerStatefulWidget {
@@ -79,7 +79,7 @@ class _ShortcutButtonState extends ConsumerState<ShortcutButton> {
             ),
             onPressed: () => onPressButton(0),
             child: Text(
-              Strings.kAlarmRingNow,
+              "kAlarmRingNow".tr(),
               textAlign: TextAlign.center,
               style: currentTheme.textTheme.displayMedium,
             ),

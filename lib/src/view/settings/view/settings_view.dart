@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:h2o_flutter/src/core/const/device_size.dart';
-import 'package:h2o_flutter/src/core/const/strings.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 import 'package:h2o_flutter/src/view/settings/viewmodel/isettings_state.dart';
 import 'package:h2o_flutter/src/view/settings/widget/edit_personal_info_show_dialog.dart';
@@ -45,35 +45,35 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                     margin: const EdgeInsets.all(8),
                     height: DeviceSize.kHeight(context) * 0.7,
                     child: ListView(children: [
-                      const SettingsCategoryRow(
-                          headerText: Strings.kSettingsPersonal,
+                      SettingsCategoryRow(
+                          headerText: "kSettingsPersonal".tr(),
                           iconData: Icons.account_circle),
                       SettingsListTile(
-                          text: Strings.kSettingsGender,
+                          text: "kSettingsGender".tr(),
                           trailingChild: Text(
                             getPersonalInformation(1),
                             style: currentTheme.textTheme.headlineLarge,
                           )),
                       SettingsListTile(
-                          text: Strings.kSettingsWeight,
+                          text: "kSettingsWeight".tr(),
                           trailingChild: Text(
                             getPersonalInformation(2),
                             style: currentTheme.textTheme.headlineLarge,
                           )),
                       SettingsListTile(
-                          text: Strings.kSettingsExerciseFrequency,
+                          text: "kSettingsExerciseFrequency".tr(),
                           trailingChild: Text(
                             getPersonalInformation(3),
                             style: currentTheme.textTheme.headlineLarge,
                           )),
                       SettingsListTile(
-                          text: Strings.kSettingsWakeUpTime,
+                          text: "kSettingsWakeUpTime".tr(),
                           trailingChild: Text(
                             '${getPersonalInformation(4)} : ${getPersonalInformation(5)}',
                             style: currentTheme.textTheme.headlineLarge,
                           )),
                       SettingsListTile(
-                          text: Strings.kSettingsBedTime,
+                          text: "kSettingsBedTime".tr(),
                           trailingChild: Text(
                             '${getPersonalInformation(6)} : ${getPersonalInformation(7)}',
                             style: currentTheme.textTheme.headlineLarge,
@@ -82,13 +82,13 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                           onTap: () {
                             editPersonalInfoShowDialog(context, ref);
                           },
-                          text: Strings.kSettingsEditPersonal,
+                          text: "kSettingsEditPersonal".tr(),
                           trailingChild: Icon(
                             Icons.arrow_forward_ios,
                             color: currentTheme.indicatorColor,
                           )),
-                      const SettingsCategoryRow(
-                          headerText: Strings.kSettingsMore,
+                      SettingsCategoryRow(
+                          headerText: "kSettingsMore".tr(),
                           iconData: Icons.dashboard_customize_outlined),
                       SettingsListTile(
                           onTap: () {
@@ -98,14 +98,14 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                                   return const LanguageBottomSheet();
                                 });
                           },
-                          text: Strings.kSettingsLanguage,
+                          text: "kSettingsLanguage".tr(),
                           trailingChild: Icon(
                             Icons.arrow_forward_ios,
                             color: currentTheme.indicatorColor,
                           )),
-                      const SettingsListTile(
-                          text: Strings.kSettingsDarkTheme,
-                          trailingChild: ThemeSwitch()),
+                      SettingsListTile(
+                          text: "kSettingsDarkTheme".tr(),
+                          trailingChild: const ThemeSwitch()),
                     ]),
                   ),
                 ],
