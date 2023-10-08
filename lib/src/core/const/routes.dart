@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:h2o_flutter/src/view/alarm/view/alarm_view.dart';
+import 'package:h2o_flutter/src/view/choose_language/view/choose_language_view.dart';
 import 'package:h2o_flutter/src/view/home/view/home_view.dart';
 import 'package:h2o_flutter/src/view/register/view/almost_done_view.dart';
 import 'package:h2o_flutter/src/view/register/view/fifth_tab_view.dart';
@@ -17,6 +18,7 @@ class Routes {
   //BASE
   static const String splash = '/splash';
   static const String getStarted = '/getStarted';
+  static const String chooseLanguage = '/choose';
   //REGISTER
   static const String register = '/register';
   static const String firstTab = '/first';
@@ -46,5 +48,6 @@ class Routes {
     settings: (context) => const SettingsView(),
     register: (context) => RegisterView(),
     alarm: (context) => const AlarmView(),
+    chooseLanguage: (context) => const ChooseLanguageView(),
   };
 }

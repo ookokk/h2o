@@ -11,65 +11,67 @@ class LanguageBottomSheet extends ConsumerWidget {
     final currentTheme = ref.watch(themeProvider);
     return Padding(
       padding: const EdgeInsets.all(12.0),
-      child: Container(
-        margin: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-                color: currentTheme.shadowColor,
-                blurRadius: 5,
-                offset: const Offset(0, 3))
-          ],
-          color: currentTheme.canvasColor,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            buildListTile(currentTheme, context, "English", () {
-              context.setLocale(const Locale('en', 'US'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "Turkish", () {
-              context.setLocale(const Locale('tr', 'TR'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "Nederland", () {
-              context.setLocale(const Locale('nl', 'NL'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "Arabic", () {
-              context.setLocale(const Locale('ar', 'SA'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "German", () {
-              context.setLocale(const Locale('de', 'DE'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "Spanish", () {
-              context.setLocale(const Locale('es', 'ES'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "French", () {
-              context.setLocale(const Locale('fr', 'FR'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "Japanese", () {
-              context.setLocale(const Locale('ja', 'JP'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "Portuguese", () {
-              context.setLocale(const Locale('pt', 'BR'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "Chinese", () {
-              context.setLocale(const Locale('zh', 'CN'));
-              Navigator.pop(context);
-            }),
-            buildListTile(currentTheme, context, "Russian", () {
-              context.setLocale(const Locale('ru', 'RU'));
-              Navigator.pop(context);
-            }),
-          ],
+      child: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                  color: currentTheme.shadowColor,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3))
+            ],
+            color: currentTheme.canvasColor,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              buildListTile(currentTheme, context, "English", () {
+                context.setLocale(const Locale('en', 'US'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "Turkish", () {
+                context.setLocale(const Locale('tr', 'TR'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "Nederland", () {
+                context.setLocale(const Locale('nl', 'NL'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "Arabic", () {
+                context.setLocale(const Locale('ar', 'SA'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "German", () {
+                context.setLocale(const Locale('de', 'DE'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "Spanish", () {
+                context.setLocale(const Locale('es', 'ES'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "French", () {
+                context.setLocale(const Locale('fr', 'FR'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "Japanese", () {
+                context.setLocale(const Locale('ja', 'JP'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "Portuguese", () {
+                context.setLocale(const Locale('pt', 'BR'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "Chinese", () {
+                context.setLocale(const Locale('zh', 'CN'));
+                Navigator.pop(context);
+              }),
+              buildListTile(currentTheme, context, "Russian", () {
+                context.setLocale(const Locale('ru', 'RU'));
+                Navigator.pop(context);
+              }),
+            ],
+          ),
         ),
       ),
     );

@@ -26,7 +26,7 @@ mixin SplashViewModel on ConsumerState<SplashView> {
         final isRegistered = dataBox.user.get('isRegistered');
         if (isRegistered == false) {
           Navigator.pushNamedAndRemoveUntil(
-              context, '/register', (route) => false);
+              context, '/choose', (route) => false);
         } else {
           Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
         }
