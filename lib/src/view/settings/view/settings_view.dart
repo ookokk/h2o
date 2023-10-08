@@ -36,8 +36,10 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Lottie.asset('assets/animations/settings.json',
-                            animate: false)
+                        Lottie.asset(
+                          'assets/animations/settings.json',
+                          animate: true,
+                        )
                       ],
                     ),
                   ),
