@@ -14,6 +14,12 @@ mixin SplashViewModel on ConsumerState<SplashView> {
     super.initState();
   }
 
+  @override
+  void dispose() {
+    _connectionStatus;
+    super.dispose();
+  }
+
   Future<void> checkInternetConnectivity() async {
     final connectivity = Connectivity();
     _connectionStatus = await connectivity.checkConnectivity();
@@ -21,7 +27,7 @@ mixin SplashViewModel on ConsumerState<SplashView> {
     if (_connectionStatus == ConnectivityResult.none) {
       _showNoInternetAlertDialog();
     } else {
-      Future.delayed(const Duration(seconds: 3), () {
+      Future.delayed(const Duration(seconds: 5), () {
         final dataBox = getIt.get<IHiveManager>();
         final isRegistered = dataBox.user.get('isRegistered');
         if (isRegistered == false) {

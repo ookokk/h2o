@@ -25,9 +25,12 @@ class _SplashViewState extends ConsumerState<SplashView> with SplashViewModel {
         height: DeviceSize.kHeight(context) * 0.9,
         width: DeviceSize.kWidth(context) * 0.9,
         child: Center(
-          child: Lottie.asset('assets/animations/circle_water.json',
-              height: DeviceSize.kHeight(context) * 0.3),
-        ),
+            child: Lottie.asset(
+          'assets/animations/water.json',
+          height: DeviceSize.kHeight(context) * 0.3,
+          repeat: false,
+          animate: true,
+        )),
       ),
     ));
   }
