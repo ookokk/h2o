@@ -13,7 +13,7 @@ void main() {
   runApp(EasyLocalization(
       supportedLocales: LanguageManager.instance.supportedLocales,
       path: 'assets/lang',
-      startLocale: LanguageManager.instance.turkishLocale,
+      startLocale: LanguageManager.instance.englishLocale,
       assetLoader: const CodegenLoader(),
       child: const ProviderScope(child: MyApp())));
 }
