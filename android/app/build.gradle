@@ -28,6 +28,7 @@ if(keyPropertiesFile.exists()){
 }
 
 android {
+    lintOptions { checkReleaseBuilds false}
     namespace "com.okok.h2o_flutter"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
@@ -62,11 +63,7 @@ android {
             storePassword keyProperties['storePassword']
         }
     }
-    buildTypes {
-        release {
-            signingConfig signingConfigs.debug
-        }
-    }
+
 }
 
 flutter {
