@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:h2o_flutter/src/core/init/theme/theme_provider.dart';
 
 class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget {
@@ -16,26 +17,27 @@ class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final currentTheme = ref.watch(themeProvider);
     return AppBar(
-      centerTitle: true,
-      title: Text(
-        title ?? "",
-        style: currentTheme.textTheme.displaySmall
-            ?.copyWith(fontWeight: FontWeight.bold),
-      ),
-      elevation: 0,
-      actions: [
-        IconButton(
-            onPressed: rightIconOnTap ?? () {},
-            icon: Icon(
-              Icons.notifications,
-              color: currentTheme.indicatorColor,
-            ))
-      ],
-      backgroundColor: currentTheme.scaffoldBackgroundColor,
-      leading: IconButton(
-        onPressed: leftIconOnTap ?? () {},
-        icon: Icon(color: currentTheme.indicatorColor, Icons.settings),
-      ),
-    );
+        centerTitle: true,
+        title: Text(
+          title ?? "",
+          style: currentTheme.textTheme.displaySmall
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        elevation: 0,
+        actions: [
+          IconButton(
+              onPressed: rightIconOnTap ?? () {},
+              icon: SvgPicture.asset(
+                'assets/images/alarm_home.svg',
+                height: 50,
+              ))
+        ],
+        backgroundColor: currentTheme.scaffoldBackgroundColor,
+        leading: IconButton(
+            onPressed: leftIconOnTap ?? () {},
+            icon: SvgPicture.asset(
+              'assets/images/settings.svg',
+              height: 45,
+            )));
   }
 }
