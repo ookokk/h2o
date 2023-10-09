@@ -6,6 +6,7 @@
     <application
         android:label="h2o_flutter"
         android:name="${applicationName}"
+        android:roundIcon="@mipmap/ic_launcher"
         android:icon="@mipmap/ic_launcher">
         <service
             android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmService"

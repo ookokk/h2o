@@ -43,6 +43,9 @@ class FifthTabView extends ConsumerWidget {
               text: "kFifthDrinkingWater".tr(),
             ),
             const SizedBox(
+              height: 100,
+            ),
+            const SizedBox(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [CustomBedTimePicker()],
