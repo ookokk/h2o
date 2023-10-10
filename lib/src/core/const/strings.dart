@@ -49,7 +49,7 @@ class Strings {
   static const String kAlarmToday = "Today";
   static const String kAlarmTomorrow = "Tomorrow";
   static const String kAlarmAfterTomorrow = "After tomorrow";
-  static const String kAlarmNotificationTitle = "Your Water Reminder";
+  static const String kAlarmNotificationTitle = "Water Reminder";
   static const String kAlarmCancel = "Cancel";
   static const String kAlarmSave = "Save";
   static const String kAlarmLoopAudio = "Loop alarm audio";
