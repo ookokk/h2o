@@ -1,4 +1,4 @@
-package com.okok.h2o_flutter
+package com.okok.h2o
 
 import io.flutter.embedding.android.FlutterActivity
 

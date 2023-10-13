@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.okok.h2oFlutter</string>
+	<string>com.okok</string>
 	<key>PROJECT_ID</key>
 	<string>h20-water-reminder</string>
 	<key>STORAGE_BUCKET</key>
