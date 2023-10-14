@@ -50,7 +50,7 @@ class ExerciseContainer extends ConsumerWidget {
               Expanded(child: SvgPicture.asset(imagePath)),
               const SizedBox(width: 16.0),
               Expanded(
-                flex: 3,
+                flex: 4,
                 child: Column(
                   children: [
                     Expanded(

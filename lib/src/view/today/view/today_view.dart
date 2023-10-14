@@ -24,11 +24,6 @@ class TodayViewState extends ConsumerState<TodayView> with ITodayState {
             const SizedBox(
               height: 18,
             ),
-            IconButton(
-                onPressed: () {
-                  dataBox.user.put('updatingWaterNeed', 0);
-                },
-                icon: const Icon(Icons.refresh)),
             const SizedBox(
               height: 450,
               child: HistoryListView(),
