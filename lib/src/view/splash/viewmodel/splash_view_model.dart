@@ -28,10 +28,10 @@ mixin SplashViewModel on ConsumerState<SplashView> {
     } else {
       Future.delayed(const Duration(seconds: 4), () {
         final isRegistered = dataBox.user.get('isRegistered');
-        if (isRegistered == false) {
+        if (isRegistered == false || isRegistered == null) {
           Navigator.pushNamedAndRemoveUntil(
               context, '/choose', (route) => false);
-        } else {
+        } else if (isRegistered == true) {
           Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
         }
       });

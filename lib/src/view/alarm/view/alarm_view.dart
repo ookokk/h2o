@@ -58,6 +58,17 @@ class _AlarmViewState extends ConsumerState<AlarmView> with IAlarmState {
             children: [
               ShortcutButton(refreshAlarms: loadAlarms),
               ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: currentTheme.canvasColor),
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/choose', (route) => false);
+                  },
+                  child: Text(
+                    "Register",
+                    style: currentTheme.textTheme.titleSmall,
+                  )),
+              ElevatedButton(
                   style: ButtonStyle(
                     minimumSize: MaterialStateProperty.all<Size>(
                       Size(
