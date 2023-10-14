@@ -21,17 +21,13 @@ class _SplashViewState extends ConsumerState<SplashView> with SplashViewModel {
     return SafeArea(
         child: Scaffold(
       backgroundColor: currentTheme.scaffoldBackgroundColor,
-      body: SizedBox(
-        height: DeviceSize.kHeight(context) * 0.9,
-        width: DeviceSize.kWidth(context) * 0.9,
-        child: Center(
-            child: Lottie.asset(
-          'assets/animations/water.json',
-          height: DeviceSize.kHeight(context) * 0.3,
-          repeat: false,
-          animate: true,
-        )),
-      ),
+      body: Center(
+          child: Lottie.asset(
+        'assets/animations/water.json',
+        height: DeviceSize.kHeight(context) * 0.2,
+        repeat: false,
+        animate: true,
+      )),
     ));
   }
 }

@@ -26,7 +26,7 @@ mixin SplashViewModel on ConsumerState<SplashView> {
     if (_connectionStatus == ConnectivityResult.none) {
       _showNoInternetAlertDialog();
     } else {
-      Future.delayed(const Duration(seconds: 5), () {
+      Future.delayed(const Duration(seconds: 4), () {
         final isRegistered = dataBox.user.get('isRegistered');
         if (isRegistered == false) {
           Navigator.pushNamedAndRemoveUntil(
