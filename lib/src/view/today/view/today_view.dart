@@ -17,14 +17,14 @@ class TodayViewState extends ConsumerState<TodayView> with ITodayState {
     final currentTheme = ref.watch(themeProvider);
     return Scaffold(
       backgroundColor: currentTheme.scaffoldBackgroundColor,
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(child: WaterCircularIndicator()),
-            const SizedBox(
+            SizedBox(child: WaterCircularIndicator()),
+            SizedBox(
               height: 18,
             ),
-            const SizedBox(
+            SizedBox(
               height: 450,
               child: HistoryListView(),
             ),

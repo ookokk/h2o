@@ -32,7 +32,7 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
               child: Column(
                 children: [
                   SizedBox(
-                    height: DeviceSize.kHeight(context) * 0.2,
+                    height: DeviceSize.kHeight(context) * 0.15,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -45,7 +45,7 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                   ),
                   Container(
                     margin: const EdgeInsets.all(8),
-                    height: DeviceSize.kHeight(context) * 0.7,
+                    height: DeviceSize.kHeight(context) * 0.8,
                     child: ListView(children: [
                       SettingsCategoryRow(
                           headerText: "kSettingsPersonal".tr(),
@@ -87,6 +87,15 @@ class _ProfileSettingsViewState extends ConsumerState<SettingsView>
                           text: "kSettingsEditPersonal".tr(),
                           trailingChild: Icon(
                             Icons.arrow_forward_ios,
+                            color: currentTheme.indicatorColor,
+                          )),
+                      SettingsListTile(
+                          onTap: () {
+                            dataBox.user.put('updatingWaterNeed', 0);
+                          },
+                          text: "kSettingsReset".tr(),
+                          trailingChild: Icon(
+                            Icons.refresh,
                             color: currentTheme.indicatorColor,
                           )),
                       SettingsCategoryRow(

@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const kGetSNeverFor = 'kGetSNeverFor';
   static const kGetSAppName = 'kGetSAppName';
   static const kGetSBtn = 'kGetSBtn';
@@ -69,5 +69,5 @@ abstract class  LocaleKeys {
   static const kSettingsBedTime = 'kSettingsBedTime';
   static const kSettingsDarkTheme = 'kSettingsDarkTheme';
   static const kSettingsLanguage = 'kSettingsLanguage';
-
+  static const kSettingsReset = 'kSettingsReset';
 }

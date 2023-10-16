@@ -85,4 +85,5 @@ class Strings {
   static const kSettingsBedTime = "Bed Time";
   static const kSettingsDarkTheme = "DarkTheme";
   static const kSettingsLanguage = "Language";
+  static const kSettingsReset = "Reset the amount of water drunk";
 }

@@ -61,13 +61,6 @@ class WaterCircularIndicatorState
           },
           text: "kHome300ml".tr(),
         ),
-        IconButton(
-            onPressed: () {
-              setState(() {
-                dataBox.user.put('updatingWaterNeed', 0);
-              });
-            },
-            icon: const Icon(Icons.refresh)),
       ],
     );
   }
