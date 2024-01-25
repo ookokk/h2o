@@ -1,6 +1,6 @@
 class Strings {
     
-  //get started
+  //get started 
   static const String kGetSNeverFor = "Never forget to drink water again!";
   static const String kGetSAppName = "H2O";
   static const String kGetSBtn = "Get Started";
